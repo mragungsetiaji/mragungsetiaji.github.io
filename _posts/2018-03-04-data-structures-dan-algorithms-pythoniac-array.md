@@ -132,63 +132,66 @@ Diketahui sebuah `string`, temukan `length` dari `substring` terpanjang tanpa me
 		print(longest_non_repeat(string))
 		print(longest_non_repeat_two(string))
 
- ## 5. merge_intervals
- Diketahui sebuah `collection` dari interval-interval, `merge` semua interval yang `overlap` satu dengan yang lain.
+## 5. merge_intervals
+Diketahui sebuah `collection` dari interval-interval, `merge` semua interval yang `overlap` satu dengan yang lain.
 
 **Contoh:**
- - *Input*: [1, 3], [2, 6], [8, 10], [15, 18]
- - *Output*: [1, 6], [8, 10], [15, 18]
+- *Input*: [1, 3], [2, 6], [8, 10], [15, 18]
+- *Output*: [1, 6], [8, 10], [15, 18]
 
 **Code:**
 
+  ```python
 	class Interval(object):
-		def __init__(self, s=0, e=0):
-			self.start = s
-			self.end = e
+      def __init__(self, s=0, e=0):
+			    self.start = s
+			    self.end = e
 
-	def merge(intervals):
-		"""
-		:type intervals: List[Interval]
-		:rtype: List[Interval]
-		"""
-		out = []
-		for i in sorted(intervals, key=lambda i: i.start):
-			if out and i.start <= out[-1].end:
-				out[-1].end = max(out[-1].end, i.end)
-			else:
-				out += i,
-		return out
+  def merge(intervals):
+		  """
+		  :type intervals: List[Interval]
+		  :rtype: List[Interval]
+		  """
+		  out = []
+		  for i in sorted(intervals, key=lambda i: i.start):
+			    if out and i.start <= out[-1].end:
+				      out[-1].end = max(out[-1].end, i.end)
+			    else:
+				      out += i,
+		  return out
 
 	def print_intervals(intervals):
-		res = []
-		for i in intervals:
-			res.append('['+str(i.start)+','+str(i.end)+']')
-		print("".join(res))
+      res = []
+		  for i in intervals:
+			    res.append('['+str(i.start)+','+str(i.end)+']')
+		  print("".join(res))
 
-	def merge_intervals(l):
-		#sort
-		if l is None:
-			return None
-		l.sort(key=lambda i: i[0])
-		out = [l.pop(0)]
-		for i in l:
-			if out[-1][-1] >= i[0]:
-				out[-1][-1] = max(out[-1][-1], i[-1])
-			else:
-				out.append(i)
-		return out
+  def merge_intervals(l):
+		  #sort
+		  if l is None:
+			    return None
+		  l.sort(key=lambda i: i[0])
+		  out = [l.pop(0)]
+		  for i in l:
+			    if out[-1][-1] >= i[0]:
+				      out[-1][-1] = max(out[-1][-1], i[-1])
+			    else:
+				      out.append(i)
+		  return out
 
-	if __name__ == "__main__":
-		given = [[1, 3],[2, 6],[8, 10],[15, 18]]
-		intervals = []
-		for l, r in given:
-			intervals.append(Interval(l,r))
-		print_intervals(intervals)
-		print_intervals(merge(intervals))
-		print(merge_intervals[given])
-
- ## 6. missing_ranges
- Temukan `missing ranges` diantara `low` dan `high` dalam sebuah array
+  if __name__ == "__main__":
+      given = [[1, 3],[2, 6],[8, 10],[15, 18]]
+      intervals = []
+      for l, r in given:
+        intervals.append(Interval(l,r))
+      print_intervals(intervals)
+      print_intervals(merge(intervals))
+      print(merge_intervals[given])
+  ```
+  
+## 6. missing_ranges
+ 
+Temukan `missing ranges` diantara `low` dan `high` dalam sebuah array
 
 **Contoh:**
  - *Input*: array = [3, 5], low = 1, hi = 10 
