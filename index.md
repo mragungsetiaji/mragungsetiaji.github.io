@@ -1,10 +1,8 @@
 ---
 layout: home
 ---
-# About Theme
+# About Me
 
-This theme is Jekyll port of [vangeltzo.com](http://vangeltzo.com/) (by [Vangelis Tzortzis](https://github.com/srekoble)).
+Aji is an INTJ, quiet, task-oriented and insightful individual who demand nothing but excellence from himself and others. He is a long range and conceptual thinker that has insights into macro-issues. He has a critical mind, he look at existing flaws in current systems, point out loopholes and offer creative solutions.
 
-To learn how to install and use this theme check out the [installation guide](http://taylantatli.me/Halve/halve-theme/) for more information.
-
-If you have a question, find a bug, or just want to say hi, please open an [issue on GitHub](https://github.com/TaylanTatli/Halve/issues/new).
+I speak in Python and Basic
