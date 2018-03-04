@@ -12,7 +12,7 @@ tags:
 
 Contoh Implementasi dari `data structure` dan `algorithm` pada Array Python
 
- ##  **1. circular_counter**
+ ##  1. circular_counter
 	 
 Ada  beberapa orang yang duduk dalam mode melingkar, `print` setiap anggota ketiga ketika kita menghilangkannya, perhitungan berikutnya akan dimulai setelah anggota tersebut dihilangkan. `print` sampai semua anggota orang tersebut habis. Gunakan `parameter` nomor urut dalam `list` dan `variable` angka kelipatan untuk menghilangkan anggota tersebut.
 
@@ -25,16 +25,16 @@ Ada  beberapa orang yang duduk dalam mode melingkar, `print` setiap anggota keti
  
  **Code:**
 
-        a = \['1','2','3','4','5','6','7','8','9'\]
-        
-        def circular_counter(int_list, skip):
-		    skip = skip - 1 #list mulai dari index 0
-		    idx = 0
-		    len_list = (len(int_list))
-		    while len_list>0:
-			    idx = (skip+idx)%len_list 
-			    print(int_list.pop(idx))
-		 	    len_list -= 1
+    a = \['1','2','3','4','5','6','7','8','9'\]
+
+    def circular_counter(int_list, skip):
+      skip = skip - 1 #list mulai dari index 0
+      idx = 0
+      len_list = (len(int_list))
+      while len_list>0:
+        idx = (skip+idx)%len_list 
+        print(int_list.pop(idx))
+        len_list -= 1
 		
 		circular_counter(a,3)
 
