@@ -250,6 +250,7 @@ Rotasikan sebuah `array` dengan banyaknya `element` n ke kanan sebanyak k `steps
   ```
   
  - Solusi kedua
+ 
   ```python
   def rotate2(nums, k):
       """
@@ -270,7 +271,7 @@ Rotasikan sebuah `array` dengan banyaknya `element` n ke kanan sebanyak k `steps
           a += 1
           b -= 1
   ```
-  
+
  - Solusi ketiga
   ```python
   def rotate3(nums, k):
