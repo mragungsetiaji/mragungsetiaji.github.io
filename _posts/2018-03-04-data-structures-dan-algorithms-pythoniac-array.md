@@ -233,6 +233,7 @@ Rotasikan sebuah `array` dengan banyaknya `element` n ke kanan sebanyak k `steps
 
 **Code:**
  - Solusi pertama
+ 
   ```python
   def rotate1(nums, k):
       """
@@ -273,6 +274,7 @@ Rotasikan sebuah `array` dengan banyaknya `element` n ke kanan sebanyak k `steps
   ```
 
  - Solusi ketiga
+ 
   ```python
   def rotate3(nums, k):
       if nums is None:
@@ -288,6 +290,8 @@ Diketahui `array` yang sudah di `sort` tanpa `duplicate`,
 
 **Contoh:**
  - diberikan [0, 1, 2, 4, 5, 7] menjadi ["0->2","4->5","7"]
+
+**Code:**
 
   ```python
     def summary_ranges(nums):
