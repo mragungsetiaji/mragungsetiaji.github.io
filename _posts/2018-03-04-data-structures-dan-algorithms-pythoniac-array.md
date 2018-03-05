@@ -222,3 +222,91 @@ Temukan `missing ranges` diantara `low` dan `high` dalam sebuah array
   print("original:", nums)
   print("missing range: ", missing_ranges(nums,0,20))
   ```
+
+## 7. rotate_array
+ 
+Rotasikan sebuah `array` dengan banyaknya `element` n ke kanan sebanyak k `steps`
+
+**Contoh:**
+ - dengan n = 7 dan k = 3
+ - array [1, 2, 3, 4, 5, 6, 7] dirotasikan menjadi [5, 6, 7, 1, 2, 3, 4]
+
+**Code:**
+ - Solusi pertama
+  ```python
+  def rotate1(nums, k):
+      """
+      nums: List[int]
+      k: int
+      
+      return: void, tidak menggunakan return, modifikasi nums
+      """
+      n = len(nums)
+      for i in range(k):
+          temp = nums[n - 1]
+          for j in range(n - 1, 0, -1):
+              nums[j] = nums[j - 1]
+          nums[0] = temp
+  ```
+  
+ - Solusi kedua
+  ```python
+  def rotate2(nums, k):
+      """
+      nums: List[int]
+      k: int
+      
+      return: void, tidak menggunakan return, modifikasi nums
+      """
+      n = len(nums)
+      k = k % n
+      reserve(nums, 0, n - k - 1)
+      reserve(nums, n - k, n - 1)
+      reserve(nums, 0, n -1)
+
+  def reverse(array, a, b):
+      while a < b:
+          array[a], array[b] = array[b], array[a]
+          a += 1
+          b -= 1
+  ```
+  
+ - Solusi ketiga
+  ```python
+  def rotate3(nums, k):
+      if nums is None:
+          return None
+      length = len(nums)
+      return nums[length - k:] + array[:length - k]
+  ```
+  
+## 8. summary_ranges
+ 
+Diketahui `array` yang sudah di `sort` tanpa `duplicate`, 
+`return summary` dari `range`nya
+
+**Contoh:**
+ - diberikan [0, 1, 2, 4, 5, 7] menjadi ["0->2","4->5","7"]
+
+  ```python
+    def summary_ranges(nums):
+        """
+        :type nums: List[int]
+        :rtype: List[str]
+        """
+        res = []
+        if len(nums) == 1:
+            return [str(nums[0])]
+        i = 0
+        while i < len(nums):
+            num = nums[i]
+            while i+1 < len(nums) and nums[i+1] - nums[i] == 1:
+                i += 1
+            if nums[i] != num:
+                res.append(str(num) + "->" + str(nums[i]))
+            else:
+                res.append(str(num))
+            i += 1
+        return res
+  ```
+  
