@@ -2,10 +2,11 @@
 layout: post
 title: "Beautiful eyes behind her glasses"
 categories:
-  - Live Story
+  - Life Experience
 tags:
-  - Live Story
+  - Life Story
   - Beautiful Story
+  - Life Experience
 ---
 
 Every place I've always left a memorable thing. And I learned that what I might say now is that something isn’t likely to happen in the future it turns out to be real. In every office I go through there will be a moment that makes me not stop to think about, from some history that I have become it interesting to remember in every step I toward the future that until now I’ve not found a fixed clear point clear by definition.
