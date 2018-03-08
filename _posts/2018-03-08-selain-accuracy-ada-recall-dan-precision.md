@@ -58,23 +58,27 @@ $$precision=  \frac{(true positives)}/(true positives+false positives)=  (terori
   gambar
   
   Garis diagonal hitam menunjukkan random classifier, kurva merah dan biru menunjukkan dua model klasifikasi yang berbeda. Untuk model tertentu, kita hanya bisa bertahan pada satu kurva, tapi kita bisa bergerak sepanjang kurva dengan menyesuaikan threshold kita untuk mengklasifikasikan kasus positif. Umumnya, saat menurunkan threshold, kita bergerak ke kanan dan ke atas sepanjang kurva. Dengan threshold 1.0, kita akan berada di kiri bawah grafik karena kita tidak mengidentifikasi data point sebagai kelas positif yang mengarah ke bukan true positive dan bukan true negative (TPR = FPR = 0). Ketika kita menurunkan threshold, kita mengidentifikasi lebih banyak data point sebagai kelas positif, mengarah ke true positive, tetapi banyak juga ke true negative (TPR dan FPR meningkat). Akhirnya, pada threshold 0.0, kita mengidentifikasi semua data point sebagai kelas positif dan menemukannya berada di sudut kanan atas kurva ROC (TPR = FPR = 1.0).
-Rekap
+  
+## Rekap
 Kita sudah membahas beberapa istilah diatas, tidak ada yang sulit sebenarnya jika sendiri-sendiri, tapi gabungannya bisa sedikit puyeng! Mari kita rekap dan coba dengan sebuah contoh 
-Empat output dari Binary Classification
-•	True positives: data points diberi label positif yang memang sebenarnya bernilai positif
-•	False positives: data points diberi label positif yang sebenarnya bernilai negatif
-•	True negatives: data points diberi label negatif yang memang sebenarnya bernilai negatif
-•	False negatives: data points diberi label negatif yang sebenarnya bernilai positif
-Matrik Recall and Precision
-•	Recall: nilai dari sebuah classification model untuk mengidentifikasi semua instance yang relevan
-•	Precision: nilai dari sebuah classification model untuk mengembalikan hanya instance yang relevan 
-•	F1 score: Metrik yang mengkombinasikan recall and precision menggunakan harmonic mean
-Visualisasi Recall and Precision Teknik 
-•	Confusion matrix: menunjukan label actual dan predicted dari masalah klasifikasi
-•	Receiver operating characteristic (ROC) curve: kurva tentang true positive rate (TPR) vs the false positive rate (FPR) sebagai fungsi threshold dari sebuah model untuk mengklasifikasikan kelas positif
-•	Area under the curve (AUC): Matrik untuk mengkalkulasi perfoma secara keseluruhan dari model klasifikasi berdasarkan area di bawah kurva ROC
-Contoh Implementasi
-Tugas kita adalah mendiagnosis 100 pasien dengan penyakit yang ada pada 50% populasi umum. Kita akan mengasumsikan model black box, di mana kita memasukkan informasi tentang pasien dan mendapat skor antara 0 dan 1. Kita dapat mengubah threshold untuk memberi label pasien sebagai positif (memiliki penyakit) untuk memaksimalkan kinerja pengklasifikasian. Kita akan mengevaluasi threshold dari 0.0 menjadi 1.0 dengan penambahan 0.1, pada setiap langkah yang menghitung precision, recall, F1 score, dan lokasi pada kurva ROC. Berikut adalah hasil klasifikasi di setiap thresholdnya:
+- Empat `output` dari `Binary Classification`
+  1. `True positives`: data points diberi label positif yang memang sebenarnya bernilai positif
+  2. `False positives`: data points diberi label positif yang sebenarnya bernilai negatif
+  3. `True negatives`: data points diberi label negatif yang memang sebenarnya bernilai negatif
+  4. `False negatives`: data points diberi label negatif yang sebenarnya bernilai positif
+
+- `Matric Recall` and `Precision`
+  1. `Recall`: nilai dari sebuah model klasifikasi untuk mengidentifikasi semua `instance` yang relevan
+  2. `Precision`: nilai dari sebuah model klasifikasi untuk mengembalikan hanya `instance` yang relevan 
+  3. `F1 Score`: `Metric` yang mengkombinasikan `recall` and `precision` menggunakan `harmonic mean`
+
+- `Visualisasi Recall` and `Precision Teknik` 
+  1. `Confusion matrix`: menunjukan label `actual` dan `predicted` dari masalah klasifikasi
+  2. `Receiver operating characteristic (ROC) curve`: kurva tentang `true positive rate (TPR)` vs `the false positive rate (FPR)` sebagai fungsi `threshold` dari sebuah model untuk mengklasifikasikan kelas positif
+  3. `Area under the curve (AUC)`: `Matric` untuk mengkalkulasi perfoma secara keseluruhan dari model klasifikasi berdasarkan area di bawah kurva ROC
+
+## Contoh Implementasi
+  Tugas kita adalah mendiagnosis 100 pasien dengan penyakit yang ada pada 50% populasi umum. Kita akan mengasumsikan model black box, di mana kita memasukkan informasi tentang pasien dan mendapat skor antara 0 dan 1. Kita dapat mengubah threshold untuk memberi label pasien sebagai positif (memiliki penyakit) untuk memaksimalkan kinerja pengklasifikasian. Kita akan mengevaluasi threshold dari 0.0 menjadi 1.0 dengan penambahan 0.1, pada setiap langkah yang menghitung precision, recall, F1 score, dan lokasi pada kurva ROC. Berikut adalah hasil klasifikasi di setiap thresholdnya:
 
 tabel
 
@@ -99,8 +103,8 @@ Berikut adalah statistik dari model akhir di setiap threshold:
 
 tabel
 
-Kesimpulan
-Kita cenderung menggunakan accuracy karena setiap orang lebih familiar dengan hal tersebut! Meskipun ada metrik yang lebih sesuai seperti recall dan precision,sekarang kita sudah memiliki pengertian intuitif mengapa mereka bekerja lebih baik untuk beberapa kasus seperti klasifikasi yang tidak seimbang (imbalance). Statistik memberi kita definisi dan persamaan matematika untuk menghitung metrik ini. Data Science adalah tentang mencari tools yang tepat untuk digunakan untuk pekerjaan sesuai, dan seringkali kita perlu melampaui accuracy saat mengembangkan model klasifikasi. Mengetahui tentang recall, precision, F1 score, dan kurva ROC memungkinkan kita untuk menilai model klasifikasi dan harus membuat kita berpikir skeptis tentang siapa yang hanya memuji accuracy suatu model, terutama untuk masalah yang tidak seimbang (imbalance). Seperti yang telah kita lihat, accuracy tidak memberikan penilaian yang berguna mengenai beberapa masalah tertentu, namun sekarang kita tahu bagaimana menerapkan metrik dengan lebih baik!
+## Kesimpulan
+  Kita cenderung menggunakan `accuracy` karena setiap orang lebih familiar dengan hal tersebut! Meskipun ada metrik yang lebih sesuai seperti `recall` dan `precision`,sekarang kita sudah memiliki pengertian intuitif mengapa mereka bekerja lebih baik untuk beberapa kasus seperti klasifikasi yang tidak seimbang (`imbalance`). Statistik memberi kita definisi dan persamaan matematika untuk menghitung `metric` ini. `Data Science` adalah tentang mencari `tools` yang tepat untuk digunakan untuk pekerjaan sesuai, dan seringkali kita perlu melampaui `accuracy` saat mengembangkan model klasifikasi. Mengetahui tentang `recall`, `precision`, `F1 score`, dan kurva ROC memungkinkan kita untuk menilai model klasifikasi dan harus membuat kita berpikir skeptis tentang siapa yang hanya memuji `accuracy` suatu model, terutama untuk masalah yang tidak seimbang (`imbalance`). Seperti yang telah kita lihat, `accuracy` tidak memberikan penilaian yang berguna mengenai beberapa masalah tertentu, namun sekarang kita tahu bagaimana menerapkan `metric` dengan lebih baik!
 
 
 
