@@ -14,6 +14,8 @@ tags:
   - F1 Score
 ---
 
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
   Apakah kamu yakin jika ada seseorang menciptakan model tentang mengidentifikasi teroris yang mencoba masuk ke bandara dengan `accuracy` lebih dari 99%? Misalkan kita ambil contoh kasus teroris, modelnya: cukup beri label setiap orang yang terbang dari seluruh bandara yang bukan teroris. Mengingat 800 juta penumpang rata-rata pada data penerbangan per tahun dan 19 orang (misalnya dikonfirmasi) sebagai teroris yang menaiki pesawat terbang dari tahun 2000-2017, model ini mencapai ketepatan yang luar biasa dari 99.9999999%! Itu mungkin terdengar mengesankan, tapi saya curiga pemerintah tidak akan menelepon sesegera mungkin untuk membeli model ini. Sementara model ini memiliki akurasi yang hampir sempurna, masalahnya adalah `accuracy`nya jelas bukan `metric` yang sesuai dengan contoh kasus tersebut!
 
   Tugas pendeteksian teroris adalah masalah klasifikasi yang tidak seimbang (`imbalance`): dari kasus tersebut kita memiliki dua kelas yang perlu diidentifikasi (teroris dan bukan teroris) dengan satu kategori mewakili sebagian besar `data point`. Masalah klasifikasi yang tidak seimbang lainnya terjadi pada pendeteksian penyakit saat tingkat penyakit di masyarakat sangat rendah. Dalam kedua kasus ini kelas positif (penyakit atau teroris) sangat kalah jumlah dengan kelas negatif. Jenis masalah ini adalah contoh kasus yang cukup umum dalam `data science` saat `accuracy` bukanlah ukuran yang baik untuk menilai kinerja dalam kasus tersebut.
