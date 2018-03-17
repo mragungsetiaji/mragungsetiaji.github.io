@@ -12,6 +12,8 @@ tags:
 
 Contoh Implementasi dari `data structure` dan `algorithm` pada Array Python
 
+# Algorithm
+
 ##  1. circular_counter
 	 
 Ada  beberapa orang yang duduk dalam mode melingkar, `print` setiap anggota ketiga ketika kita menghilangkannya, perhitungan berikutnya akan dimulai setelah anggota tersebut dihilangkan. `print` sampai semua anggota orang tersebut habis. Gunakan `parameter` nomor urut dalam `list` dan `variable` angka kelipatan untuk menghilangkan anggota tersebut.
@@ -314,4 +316,8 @@ Diketahui `array` yang sudah di `sort` tanpa `duplicate`,
           i += 1
       return res
   ```
+  # Backtrack
   
+  ## 1. Permutasi
+  
+  {% gist 419a96f2e777f8bafcb5eaf1a227c5b3 permutation_backtrack.py %}
