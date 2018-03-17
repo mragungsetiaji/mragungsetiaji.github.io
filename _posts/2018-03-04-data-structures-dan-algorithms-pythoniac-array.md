@@ -318,8 +318,9 @@ Diketahui `array` yang sudah di `sort` tanpa `duplicate`,
   ```
   
   
-  # Backtrack
-  
-  ## 1. Permutasi
+# Backtrack
+  Menurut Tutorial Points:
+  > Backtracking is a form of recursion. But it involves choosing only option out of any possibilities. We begin by choosing an option and backtrack from it, if we reach a state where we conclude that this specific option does not give the required solution. We repeat these steps by going across each available option until we get the desired solution
+## 1. Permutasi
   
   {% gist 419a96f2e777f8bafcb5eaf1a227c5b3 permutation_backtrack.py %}
