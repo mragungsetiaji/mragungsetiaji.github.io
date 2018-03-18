@@ -107,6 +107,6 @@ tabel
 
 ## Kesimpulan
   Kita cenderung menggunakan `accuracy` karena setiap orang lebih familiar dengan hal tersebut! Meskipun ada metrik yang lebih sesuai seperti `recall` dan `precision`,sekarang kita sudah memiliki pengertian intuitif mengapa mereka bekerja lebih baik untuk beberapa kasus seperti klasifikasi yang tidak seimbang (`imbalance`). Statistik memberi kita definisi dan persamaan matematika untuk menghitung `metric` ini. `Data Science` adalah tentang mencari `tools` yang tepat untuk digunakan untuk pekerjaan sesuai, dan seringkali kita perlu melampaui `accuracy` saat mengembangkan model klasifikasi. Mengetahui tentang `recall`, `precision`, `F1 score`, dan kurva ROC memungkinkan kita untuk menilai model klasifikasi dan harus membuat kita berpikir skeptis tentang siapa yang hanya memuji `accuracy` suatu model, terutama untuk masalah yang tidak seimbang (`imbalance`). Seperti yang telah kita lihat, `accuracy` tidak memberikan penilaian yang berguna mengenai beberapa masalah tertentu, namun sekarang kita tahu bagaimana menerapkan `metric` dengan lebih baik!
-
+.
 
 
