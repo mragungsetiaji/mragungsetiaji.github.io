@@ -90,20 +90,23 @@ tabel
 
 Kita bisa menggunakan angka di dalam matriks tersebut untuk menghitung recall, precision, dan F1 score:
 
-persamaan
+$$recall = \frac{TP}{TP + FN} = \frac{42}{42 + 13}  = 0.76$$
+$$precision = \frac{TP}{TP + FP} = \frac{42}{42 + 16} = 0.724$$
+$$F1 Score = 2 * \frac{precision + recall}{$$
 
 Kemudian kita hitung tingkat true positif dan false negative rate untuk menemukan koordinat y dan x untuk kurva ROC.
 
-persamaa
+$$true positive rate = \frac{TP}{TP + FN} = \frac{42}{42 + 13}  = 0.76$$
+$$false positive rate = \frac{FP}{FP + TN} = \frac{16}{16 + 29} = 0.36$$
 
 Untuk membuat keseluruhan kurva ROC, kita melakukan proses ini di setiap threshold. Seperti yang mungkin kamu pikirin, ini sangat membosankan, jadi alih-alih melakukannya dengan tangan, kami menggunakan bahasa seperti Python untuk melakukannya! Tersedia Notebook Jupyter dengan perhitungannya ada di GitHub agar kamu bisa melihat implementasinya. Kurva ROC terakhir ditunjukkan di bawah ini dengan diatas data pointnya.
 
-gambar
+![alt text](https://cdn-images-1.medium.com/max/1600/1*ZAH33g5FD9xYZRadgmqWVw.png)
 
 Di sini kita bisa melihat semua konsep secara bersamaan! Pada threshold 1.0, kita mengklasifikasikan tidak ada pasien yang memiliki penyakit ini dan karenanya memiliki recall dan precision 0.0. Seiring threshold menurun, recall kembali meningkat karena kita mengidentifikasi lebih banyak pasien yang memiliki penyakit. Namun, saat recall kita meningkat, precision kita menurun karena selain meningkatkan true positive, kita meningkatkan false positive. Pada threshold 0.0, recall kita terlihat sempurna (kita menemukan semua pasien dengan penyakit ini) namun precision kita rendah karena kita memiliki banyak false positive. Kita dapat bergerak sepanjang kurva untuk model tertentu dengan mengubah threshold dan memilih threshold yang memaksimalkan F1 Score. Untuk menggeser keseluruhan kurva, kita perlu membangun model yang berbeda.
 Berikut adalah statistik dari model akhir di setiap threshold:
 
-tabel
+![alt text](https://cdn-images-1.medium.com/max/1600/1*TESjAFBurN7RVXyb5KDOxg.png)
 
 ## Kesimpulan
   Kita cenderung menggunakan `accuracy` karena setiap orang lebih familiar dengan hal tersebut! Meskipun ada metrik yang lebih sesuai seperti `recall` dan `precision`,sekarang kita sudah memiliki pengertian intuitif mengapa mereka bekerja lebih baik untuk beberapa kasus seperti klasifikasi yang tidak seimbang (`imbalance`). Statistik memberi kita definisi dan persamaan matematika untuk menghitung `metric` ini. `Data Science` adalah tentang mencari `tools` yang tepat untuk digunakan untuk pekerjaan sesuai, dan seringkali kita perlu melampaui `accuracy` saat mengembangkan model klasifikasi. Mengetahui tentang `recall`, `precision`, `F1 score`, dan kurva ROC memungkinkan kita untuk menilai model klasifikasi dan harus membuat kita berpikir skeptis tentang siapa yang hanya memuji `accuracy` suatu model, terutama untuk masalah yang tidak seimbang (`imbalance`). Seperti yang telah kita lihat, `accuracy` tidak memberikan penilaian yang berguna mengenai beberapa masalah tertentu, namun sekarang kita tahu bagaimana menerapkan `metric` dengan lebih baik!
