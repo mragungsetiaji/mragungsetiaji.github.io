@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gentlemen Introduction Series : Severless!"
+title: "Gentlemen Introduction Series : Serverless!"
 categories:
   - Data Science
 tags:
@@ -8,7 +8,7 @@ tags:
   - cloud computing
 ---
 
-# Apa itu : Severless?
+# Apa itu : Serverless?
 
 Ketika pertama kali mendengar kata **"Severless Computing"**, saya berpikir bahwa ada teknologi yang tidak menggunakan sebuah server? atau mungkin sejenis client based, yang tidak menggunakan server sama sekali. Tapi sepertinya dugaan itu salah. Server adalah komputer yang didesign untuk menanggani request dan mengirimkan data dalam suatu network. Contoh **"Web Servers"** digunakan untuk mengakses web pages dalam jaringan internet. Ketika sebuah web browser mengirimkan request ke web server, si server akan memproses request tersebut dan mengirimkan web pages yang direquestnya. Ada beberapa jenis dari server yang tersedia dengan jenis service yang berbeda seperti:
 
@@ -59,47 +59,19 @@ Kita akan membuat 2 buah functions dan upload ke dalam firebase. Function pertam
 
     Pertama, kita butuh untuk import Cloud Function untuk membuat functions dan setup triggers. Kemudian Admin SDK dibutuhkan untuk mengakses Database Firebase secara Real-Time untuk save dioutput kita.
 
-    ```Javascript
-    // File: loading_modules.js
-    // Load the Cloud Functions
-    const functions = require('firebase-functions');
-
-    // Load firebase admin to access the firebase realtime database.
-    const admin = require('firebase-admin');
-    admin.initializeApp(functions.config().firebase);
-    ```
+   {% gist bfdc074edc0bc07960d223dab2316228 loading_modules.js %}
 
 4. Tambahkan function pertama kita
 
    Code function untuk menyimpan input kedalam database
     
-    ```Javascript
-    // File:save_input.js
-    exports.saveInput = functions.https.onRequest((req, res) => {
-        // Get the text parameter.
-        const original = req.query.text;
-        // Save the text
-        return admin.database().ref('/messages').push({original: original}).then((snapshot) => {
-            // Redirect with 303 SEE OTHER to the URL of the pushed object in the Firebase console.
-            return res.redirect(303, snapshot.ref);
-        });
-    });    
-    ```
+   {% gist 975c2385a2b0adba6e2342172d886f48 save_input.js %}
 
     Jika cukup familiar dengan Node.js tidak banyak yang berbeda disini. Pada dasarnya, kita mengcapture input dari sebuah request dan disimpan dalam database via admin module pada path `/message`. Setiap text kita akan menyimpannya dibawah messages dalam real-time database. Kita bisa melihat bentuk ini pada dashboard Firebase ketika mengeksekusi sebuah function.
 
-5. Menambkan Function kedua
+5. Menambahkan Function kedua
 
-    ```Javascript
-    // File: uppercase_function.js
-    exports.convertUppercase = functions.database.ref('/messages/{pushId}/original').onWrite((event) => {
-        // Capture the original value
-        const original = event.data.val();
-        const uppercase = original.toUpperCase();
-        // writing new value.
-        return event.data.ref.parent.child('uppercase').set(uppercase);
-    });
-    ```
+    {% gist 95223d0aece56a1af973e56aebc8a475 uppercase_function.js %}
 
     Karena ini adalah sebuah `event triggered function` kita dapat mengcapture original value dari sebuah event. Kemudian mengconvert nya kedalam uppercase dan menyimpannya dalam "uppercase". Hasilnya akan terlihat pada dashboard Firebase ketika mengeksekusi.
 
