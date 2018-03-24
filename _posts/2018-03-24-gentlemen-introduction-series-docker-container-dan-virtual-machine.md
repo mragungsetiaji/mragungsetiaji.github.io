@@ -43,7 +43,8 @@ Hal yang bicarakan ini semua tentang hypervisors, kita mungkin akan menduga meng
 
 Jadi, karena VM mempunyai sebauh virtual operating system sendiri, hypervisor menjalankan aturan penting yang menyediakan VM dengan sebuah platform untuk memanage dan mengeksekusi OS guest ini. Dan mengijinkan host computer untuk share resource mereka kepada VM yang berjalan sebagai guest diatasnya.
 
-{gambar}
+
+<a href="https://ibb.co/c7ukc7"><img src="https://preview.ibb.co/bMbyx7/1_RKPXd_Vaq_HRzm_Q5_RPBH_d_g.png" alt="1_RKPXd_Vaq_HRzm_Q5_RPBH_d_g" border="0"></a>
 
 Seperti yang kita lihat pada gambar tersebut, VM mengemas virtual hardware, sebuah kernel (OS) dan space untuk user pada setiap VM yang baru.
 
@@ -55,7 +56,7 @@ Maksud dan tujuan dari container terlihat seperti VM. Sebagai contoh, keduanya m
 
 Perbedaan besar antara containers dan VM adalah containers men-share host system kernel dengan containers yang lain.
 
-{gambar}
+<a href="https://ibb.co/mUTNPn"><img src="https://preview.ibb.co/fwxGjn/1_V5_N9g_Jdn_To_Irg_Ag_VJTtl_w.png" alt="1_V5_N9g_Jdn_To_Irg_Ag_VJTtl_w" border="0"></a>
 
 Gambar ini menunjukkan bahwa container hanya mengemas user space, dan bukan kernel atau virtual hardware seperti yang dilakukan oleh VM. Setiap container mendapatkan user space yang terisolasi sendiri untuk mengijinkan beberapa container berjalan pada satu host machine. Kita bisa melihat bahwa semua OS system level dishare across containers. Bagian yang hanya dibuat dari scratch adalah bin dan libs. Ini yang menjadikan container sangat lightweight (ringa).
 
@@ -75,11 +76,11 @@ Lalu kenapa Docker cepat berkembang?
 
 4. **Modularity dan Scalability**: Docker membuat hall mudah untuk di aplikasikan ke maasing-masing container. Contoh, kita ingin Postgres Database running pada sebuah container dan Redis server dilain sisi Node.js app juga. Dengan Docker hal ini akan menjadi lebih mudah untuk menghubungkan container tersebut secara bersamaan untuk membuat sebuah program, membuat hal ini mudah untuk scale atau update component secara indepeden dimana datang.
 
-{gambar}
+<a href="https://ibb.co/b4h5c7"><img src="https://preview.ibb.co/iWEwjn/1_s_GHbxx_Ldm87_n7t_KQS3_EUg.png" alt="1_s_GHbxx_Ldm87_n7t_KQS3_EUg" border="0"></a>
 
 ## Fundamental dari konsep Docker
 
-{gambar}
+<a href="https://ibb.co/fNBLAS"><img src="https://preview.ibb.co/kO7tVS/1_K7p9dz_D9z_Hu_KEMg_Acb_SLPQ.png" alt="1_K7p9dz_D9z_Hu_KEMg_Acb_SLPQ" border="0"></a>
 
 ### Docker Engine
 Docker engine adalah layer dimana Docker berjalan. Runtime yang ringan dan tooling yang memanage containers, image, build dan lebih dari itu. DE berjalan secara native pada Linux System dan dibuat berdasarkan:
@@ -92,7 +93,7 @@ Docker engine adalah layer dimana Docker berjalan. Runtime yang ringan dan tooli
 
 Docker Client adalah kita sebagai end-user dari Docker yang berkomunikasi dengannya. Bisa sebagai UI dari Docker, sebagai contoh ketika mengeksekusi:
 
-{gist}
+{% gist 5d2ec054b8b253826d81146043200f4d dockerbuild.sh %}
 
 Kita yang berkomunikasi dengan Docker Client dan kemudian instruksi tersebut di teruskan ke Docker Daemon.
 
@@ -110,7 +111,7 @@ Dockerfile dimana kita menuliskan intruksi untuk membuat sebuah Docker Image. In
 
 dan lain sebagainya. Contoh Dockerfile:
 
-{gist}
+{% gist a5b8be39ddedf77cfd74f1c308653770 Dockerfile %}
 
 ### Docker Image
 
