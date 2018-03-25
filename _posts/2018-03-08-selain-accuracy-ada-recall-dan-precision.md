@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Selain Accuracy ada Recall dan Precision (d'cont)"
+title: "Machine Learning : Metrics Recall and Accuracy!"
 image: https://preview.ibb.co/j1frjn/Untitled_1.jpg
 categories:
   - Machine Learning
@@ -17,23 +17,25 @@ tags:
 
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
+# Selain Accuracy ada Recall dan Precision
+
   Apakah kamu yakin jika ada seseorang menciptakan model tentang mengidentifikasi teroris yang mencoba masuk ke bandara dengan `accuracy` lebih dari 99%? Misalkan kita ambil contoh kasus teroris, modelnya: cukup beri label setiap orang yang terbang dari seluruh bandara yang bukan teroris. Mengingat 800 juta penumpang rata-rata pada data penerbangan per tahun dan 19 orang (misalnya dikonfirmasi) sebagai teroris yang menaiki pesawat terbang dari tahun 2000-2017, model ini mencapai ketepatan yang luar biasa dari 99.9999999%! Itu mungkin terdengar mengesankan, tapi saya curiga pemerintah tidak akan menelepon sesegera mungkin untuk membeli model ini. Sementara model ini memiliki akurasi yang hampir sempurna, masalahnya adalah `accuracy`nya jelas bukan `metric` yang sesuai dengan contoh kasus tersebut!
 
   Tugas pendeteksian teroris adalah masalah klasifikasi yang tidak seimbang (`imbalance`): dari kasus tersebut kita memiliki dua kelas yang perlu diidentifikasi (teroris dan bukan teroris) dengan satu kategori mewakili sebagian besar `data point`. Masalah klasifikasi yang tidak seimbang lainnya terjadi pada pendeteksian penyakit saat tingkat penyakit di masyarakat sangat rendah. Dalam kedua kasus ini kelas positif (penyakit atau teroris) sangat kalah jumlah dengan kelas negatif. Jenis masalah ini adalah contoh kasus yang cukup umum dalam `data science` saat `accuracy` bukanlah ukuran yang baik untuk menilai kinerja dalam kasus tersebut.
 
   Secara intuitif, kita tahu bahwa merepresentasikan semua `data point` sebagai hal negatif dalam masalah pendeteksian teroris hasilnya tidak cukup membantu, dan sebaliknya, kita harus fokus untuk mengidentifikasi kasus positif tersebut. `Metric` yang sesuai untuk memaksimalkannya dikenal dalam statistik seperti `recall`, atau kemampuan model untuk menemukan semua kasus yang relevan dalam `dataset`. Definisi `recall` yang tepat adalah jumlah `true positive` dibagi dengan jumlah `true positive` ditambah jumlah `false negative`. `True positive` adalah titik data yang tergolong positif dengan model yang sebenarnya bersifat positif (artinya memang benar), dan `false negative` adalah `data point` yang diidentifikasi model sebagai negatif yang sebenarnya bersifat positif (tidak benar). Dalam kasus terorisme, `true positive` diidentifikasi dengan teroris yang sesungguhnya, dan `false negative` mengartikan individu yang menjadi label bukan teroris yang sebenarnya adalah teroris. `Recall` dapat dianggap sebagai kemampuan model untuk menemukan semua `data point` yang relevan dalam dataset.
 
-$$recall = \frac{true_positives}{true_positives+false_negatives}$$
+$$recall = \frac{true positives}{true positives+false negatives}$$
 
-$$recall = \frac{teroris_teridentifikasi_dengan_benar}{teroris_teridentifikasi_dengan_benar+teroris_dinyatakan_bukan_teroris}$$
+$$recall = \frac{teroris teridentifikasi dengan benar}{teroris teridentifikasi dengan benar+teroris dinyatakan bukan teroris}$$
 
   Perhatikan pertanyaan berikut ini: jika kita memberi label pada semua individu sebagai teroris, maka `recall` bernilai 1.0! Jadi kita punya model `classifier` yang sempurna bukan? Bukan. Seperti kebanyakan konsep dalam `data science`, ada `trade-off` dalam `metric` yang kita pilih. Dalam kasus `recall`, ketika kita meningkatkan `recall`, kita menurunkan `precision`. Sekali lagi, secara intuitif kita tahu bahwa model yang memberi label 100% penumpang sebagai teroris mungkin tidak berguna karena kita harus melarang setiap orang untuk terbang menggunakan pesawat. Statistik memberi kita alasan untuk mengungkapkan intuisi kita: model baru ini akan mengalami `precision` rendah, atau kemampuan model klasifikasi untuk mengidentifikasi hanya pada `data point` yang relevan.
 
   `Precision` didefinisikan sebagai jumlah `true positive` dibagi dengan jumlah `true positive` ditambah jumlah `false positive`. `False positive` adalah kasus yang hasil dari modelnya salah, label positif yang sebenarnya negatif, atau dalam contoh kita, individu yang digolongkan oleh model sebagai teroris yang sebenarnya bukan teroris. Sementara `recall` adalah kemampuan untuk menemukan semua contoh yang relevan dalam dataset, `precision` mengungkapkan proporsi `data point` yang menurut model kita relevan dengan yang sebenarnya relevan.
 
-$$precision = \frac{true_positives}{true_positives+false_positives}$$
+$$precision = \frac{true positives}{true positives+false positives}$$
 
-$$precision = \frac{teroris_teridentifikasi_dengan_benar}{teroris_teridentifikasi_dengan_benar+bukan_teroris_dinyatakan_sebagai_teroris}
+$$precision = \frac{teroris teridentifikasi dengan benar}{teroris teridentifikasi dengan_benar+bukan teroris dinyatakan sebagai teroris}
 
   Sekarang, kita dapat melihat bahwa model pertama kita yang memberi label kepada semua individu sebagai bukan teroris tidak terlalu berguna. Meski memiliki `accuracy` hampir sempurna, ia memiliki 0 `precision` dan 0 `recall` karena tidak ada yang `true positive`! Misalkan kita memodifikasi model sedikit aja, dan mengidentifikasi satu individu dengan benar sebagai teroris. Sekarang, nilai `precision` akan menjadi 1.0 (bukan `false positive`) tapi `recall` akan menjadi sangat rendah karena kita masih memiliki banyak `false negative`. Misal lebih esktrem lagi jika mengklasifikasikan semua penumpang sebagai teroris, kita akan memiliki `recall` 1.0 (kita akan menangkap setiap teroris) namun `precision` akan sangat rendah dan kita akan menahan banyak individu yang tidak bersalah. Dengan kata lain, saat kita meningkatkan `precision` akan mengurangi `recall` dan sebaliknya
   
@@ -56,17 +58,17 @@ $$F_1 = 2 * \frac{precision * recall}{precision + recall}$$
   
   Dari confusion matrix ke recall dan precision memerlukan nilai masing-masing dalam matriks dan menerapkan persamaan berikut:
   
-$$recall = \frac{true_positives}{true_positives + false_negatives}$$
+$$recall = \frac{true positives}{true positives + false negatives}$$
 
-$$precision = \frac{true_positives}{true_positives + false_positives}$$
+$$precision = \frac{true positives}{true positives + false positives}$$
   
   Teknik visualisasi utama lainnya untuk menunjukkan kinerja model klasifikasi adalah kurva Receiver Operating Characteristic (ROC) (http://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html). Jangan takut karena melihat namanya agak rumit! Idenya relatif sederhana: kurva ROC menunjukkan bagaimana perubahan hubungan recall vs precision saat kita mengubah threshold untuk mengidentifikasi kelas positif pada model kita. Threshold mewakili nilai titik data yang dipertimbangkan di kelas positif. Jika kita memiliki model untuk mengidentifikasi suatu penyakit, model kita mungkin menghasilkan skor untuk setiap pasien antara 0 dan 1 dan kita dapat menetapkan threshold dalam kisaran ini untuk memberi label pada pasien yang memiliki penyakit (label positif). Dengan mengubah threshold, kita dapat mencoba untuk mencapai keseimbangan antara precision vs recall yang tepat.
   
   Kurva ROC menggambarkan tingkat true positive pada sumbu y dibandingkan tingkat false positive pada sumbu x. True Positive Rate (TPR) adalah recall dan False Positive Rate (FPR) adalah probabilitas dari false alarm. Kedua hal ini dapat dihitung dari confusion matrix berikut
   
-$$true_positive_rate = \frac{true_positives}{true_positives + false_negatives}$$
+$$true positive rate = \frac{true positives}{true positives + false negatives}$$
 
-$$false_positive_rate = \frac{true_positives}{true_positives + false_positives}$$
+$$false positive rate = \frac{true positives}{true positives + false positives}$$
   
   Kurva ROC digambarkan sebagai berikut:
   
@@ -107,7 +109,7 @@ $$recall = \frac{TP}{TP + FN} = \frac{42}{42 + 13}  = 0.76$$
 
 $$precision = \frac{TP}{TP + FP} = \frac{42}{42 + 16} = 0.724$$
 
-$$F1 Score = 2 * \frac{precision + recall}{$$
+$$F1 Score = 2 * \frac{precision * recall}{precision + recall} = 0.74$$
 
 Kemudian kita hitung tingkat true positif dan false negative rate untuk menemukan koordinat y dan x untuk kurva ROC.
 
