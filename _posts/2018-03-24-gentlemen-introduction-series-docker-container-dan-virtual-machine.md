@@ -137,5 +137,39 @@ Volumes adalah part of data dari sebuah container, menginialisasi ketika sebuah 
 
 ### Docker Containers
 
-Sebuah Docker Container seperti yang didiskusikan diatas, 
+Sebuah Docker Container seperti yang didiskusikan diatas, mengemas sebuah aplikasi software menjadi `invisible box` dengan semua yang aplikasi butuhkan untuk running. Hal tersebut termasuk OS, Application code, runtime, system tools, system libraries dan sebagainya. Docker Containers dibangun dari Docker Images. Karena Image hanya read-only, Docker menambahkan read-write file system diatas read-only file system dari image untuk membuat sebuah container.
+
+<a href="https://ibb.co/j8m2Pn"><img src="https://preview.ibb.co/gvsyx7/1_h_Zg_RPWer_ZVba_GT8j_Ji_JZVQ.png" alt="1_h_Zg_RPWer_ZVba_GT8j_Ji_JZVQ" border="0"></a>
+
+Setelah membuat sbeuah container, Drecker membuat sebuah network interface jadi si container bisa berkomunikasi dengan local host, attach IP yang tersedia untuk container, dan mengeksekusi prosess yang kita tentukan untuk meruning sebuah aplikasi ketika kita mendefine sebuah image.
+
+Ketika kita sukses membuat sebuah container, kita bisa menjalankannya pada environment manapun tanpa harus membuat perubahan (change).
+
+## Double-Clicking pada "Containers"
+Itulah bagian yang berjalan pada Docker. Tapi bagaimana sebuah container bisa benar-benar diimplementasikan, karena tidak ada infra yang abstract tentunya didalam sebuah container.
+
+Container sesungguhnya hanya sebuah konsep yang abstract untuk mendeskripsikan bagaimana sedikit perbedaan feature yang bekerja bersama untuk menggambarkan sebuah "container". Kita coba bongkar2 sendikit:
+
+1. **Namespaces**
+
+    Namespace menyediakan container dengan viewnya yang berjalan pada Linux System, terbatas pada apa yang container bisa lihat dan access. Ketika kita menjalankan container, Docker membuat sebuah namespaces dimana container tertentu yang akan digunakan.
+
+    Ada beberapa jenis tipe berbeda dari namespace dalam sebuah kernel pada Docker yang membuatnya, contoh: 
+
+    - **NET**: Menyediakan sebuah container dengan viewnya sendiri dari `network stack of the system` (sepeti network device sendiri, IP addresses, IP routing tables, /proc/net directory, port numbers, etc.)
+    - **PID**: PID singkatan dari Process ID. Jika kita pernah running `ps aux` pada command line untuk mengecheck process apa yang sedang running pada system, kita akan melihat kolom PID. PID namespace memberikan container mereka memiliki `scope of process` yang bisa mereka view dan berinteraksi dengannya, tentang independent init (PID 1) yang merupakan `ancestor of all processes`.
+    - **MNT**: Memberikan sebuah container tentang `mounts` pada sebuah system. Jadi, process pada mount namespace yang berbeda mempunyai view yang berbeda untuk akses view pada filesystem hierarchy.
+    - **UTS**: UTS singkatan dari UNIX Timesharing System. UTS mengijinkan sebuah process untuk mengidentifikasi system identifiers (seperti hostname, domainname, dll). UTS mengijinkan containers untuk mempunyai hostname mereka sendiri dan NIS domain name yang independent dari container yang lain dan host system.
+    - **IPC**: IPC singkatan dari InterProcess Communication. IPC namespace memiliki tanggung jawab untuk mengisolasi Resource IPC diantara process running didalam setiap container.
+    - **USER**: Namespace ini digunakan untuk mengisolasi users dengan setiap container, Functionnya mengijinkan container untuk memempunyai sebuah view berbeda dari uid (User ID) dan gi (group ID) , yang dibandingkan dengan host system. Sebagai hasilnya, sebuah process uid dan gid dapat dibedakan dari dalam dan luar user namespace, yang juga mengijinkan sebuah process untuk mempunyai sebuah `an unprivileleged user` diluar sebuah container tanpa mengorbankan root privilege didalam sebuah container
+
+    Docker menggunakan namespace tersebut bersamaan dalam sebuah order untuk mengisolasi dan memulai pembuatan sebuah container
+
+2. **Control Groups**
+
+    Atau `cgroups`adalah sebuah feature dari Linux kernel yang meng-isolate, prioriize dan accounts pada resource usage (CPU, memory, disk I/O, network, dll) dari set sebuah process. Karena hal ini, cgroup memastikan bahwa Docker Container hanya menggunakan resource yang mereka butuhkan dan jika dibutuhkan akan setup limit resource mana yang akan digunakan si container. cgroups juga memastikan bahwa single container tidak membuat satu dari resource tersebut dan membawa seluruh system down.
+
+3. **Isolated Union file system**:
+
+    Terlihat jelas seperti diatas, bagian Docker Image.
 
