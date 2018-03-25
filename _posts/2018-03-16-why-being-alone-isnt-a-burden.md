@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I'm alone but isn't a burden!"
-image: http://preview.ibb.co/b8LXPn/Untitled_1.jpg
+image: http://preview.ibb.co/nNuyx7/Untitled_1.jpg
 categories:
   - Life Experience
 tags:
