@@ -12,9 +12,9 @@ tags:
 
 # Docker, Container dan VM
 
->Docker: sebuah tools untuk packing, shipping dan running suatu program dengan menggunakan `"Containers"`.
+> Docker: sebuah tools untuk packing, shipping dan running suatu program dengan menggunakan `"Containers"`.
 
-Sebelum memahami bagaimana itu Docker, lebih dahulu memahami konsep fundamental dari sebuah "Container" dan dibandingkan dengan `"Virtual Machine (VM)"`. Di google banyak mengenai penjelasan hal tersebut namun tidak ada yang cukup mudah untuk dipahami oleh beginner (seperti saya).
+Sebelum memahami apa itu Docker, lebih dahulu memahami konsep fundamental dari sebuah "Container" dan dibandingkan dengan `"Virtual Machine (VM)"`. Di google banyak mengenai penjelasan hal tersebut namun tidak ada yang cukup mudah untuk dipahami oleh beginner (seperti saya).
 
 ## Container dan VM?
 
@@ -36,14 +36,13 @@ Seperti yang disebutkan diatas, GM dapat berjalan di `hosted hypervisor` ataupun
 
 Pertama, `hosted virtualization hypervisor` berjalan diatas OS dari host machine. Sebagai contoh, sebuah komputer menjalan OSX bisa mempunyai VM (VirtualBox atau VMWare Workstation 8) terinstall diatas OS tersebut. VM tidak memiliki direct access ke hardware, jadi VM mengakses melalui host operating system (dalam kasus ini, Mac's OSX).
 
-Keuntungan dari sebuah `hosted hypervisor` adalah hardware yang melekat menjadi kurang penting. OS host memiliki kewajiban untuk menjalankan dirver hardware bukan hypervisor-nya sendiri, sehingga disinilah `hardware compatibility` dipertimbangkan. Disisi lain, tambahan layer ini diantara hardware dan hypervisor menciptakan kebutuhan resources yang berlebih, sehingga akan mengecilkan performance dari si VM nya.
+Keuntungan dari sebuah `hosted hypervisor` adalah hardware yang melekat menjadi kurang penting. OS host memiliki kewajiban untuk menjalankan driver hardware bukan hypervisor-nya sendiri, sehingga disinilah `hardware compatibility` dipertimbangkan. Disisi lain, tambahan layer ini diantara hardware dan hypervisor menciptakan kebutuhan resources yang berlebih, sehingga akan mengecilkan performance dari si VM nya.
 
-Environment dari `bare mental hypervisor` mengatasi issu performance dengan menginstall dan menjalankannya dari hardware si host machine. Karena interfacenya langsung menanggani hardware yang bersangkutan, hal ini menjadikan dirinya tidak membutuhkan host OS untuk menjalankannya. Pada kasus ini, petama dengan menginstallnyua pada server host machine sebagai OS yang akan menjadi hypervisor. Tidak seperti host yang menjadi hypervisor, `bare metal hypervisor` mempunyai driver device sendiri dan berinteraksi langsung dengan setiap komponen untuk I/O, processing, atau OS task tertentu. Hal ini menghasilkan performance yang lebih baik, scalability dan stability. Ada tradeoff disini dimana hardware compatibilitynya terbatas karena hypervisor hanya dapat mempunyai banyak drivers built in didalamnya.
+Environment dari `bare mental hypervisor` mengatasi issue performance dengan menginstall dan menjalankannya dari hardware si host machine. Karena interfacenya langsung menanggani hardware yang bersangkutan, hal ini menjadikan dirinya tidak membutuhkan host OS untuk menjalankannya. Pada kasus ini, petama dengan menginstallnyua pada server host machine sebagai OS yang akan menjadi hypervisor. Tidak seperti host yang menjadi hypervisor, `bare metal hypervisor` mempunyai driver device sendiri dan berinteraksi langsung dengan setiap komponen untuk I/O, processing, atau OS task tertentu. Hal ini menghasilkan performance yang lebih baik, scalability dan stability. Ada tradeoff disini dimana hardware compatibilitynya terbatas karena hypervisor mempunyai banyak drivers `built in` didalamnya.
 
-Hal yang bicarakan ini semua tentang hypervisors, kita mungkin akan menduga mengapa kita butuh tambahan layer hypervisor ini diantara VM dan host machine.
+Hal yang dibicarakan ini semua tentang hypervisors, kita mungkin akan menduga mengapa kita butuh tambahan layer hypervisor ini diantara VM dan host machine.
 
-Jadi, karena VM mempunyai sebauh virtual operating system sendiri, hypervisor menjalankan aturan penting yang menyediakan VM dengan sebuah platform untuk memanage dan mengeksekusi OS guest ini. Dan mengijinkan host computer untuk share resource mereka kepada VM yang berjalan sebagai guest diatasnya.
-
+Jadi, karena VM mempunyai sebuah virtual operating system sendiri, hypervisor menjalankan aturan penting yang menyediakan VM dengan sebuah platform untuk memanage dan mengeksekusi OS guest ini. Dan mengijinkan host computer untuk share resource mereka kepada VM yang berjalan sebagai guest diatasnya.
 
 <a href="https://ibb.co/c7ukc7"><img src="https://preview.ibb.co/bMbyx7/1_RKPXd_Vaq_HRzm_Q5_RPBH_d_g.png" alt="1_RKPXd_Vaq_HRzm_Q5_RPBH_d_g" border="0"></a>
 
