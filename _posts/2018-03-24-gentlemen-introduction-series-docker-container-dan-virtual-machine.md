@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Gentlemen Introduction Series : Docker, Container dan Virtual Machine!"
+image: https://4.bp.blogspot.com/-2mE0s1ZopNc/Wn2tzuUkhRI/AAAAAAAABFk/_tOkVApzjSQ10YJZ5Hb8jtZRwNG9JSY_wCLcBGAs/s1600/Docker.png
 categories:
   - Docker
 tags:
