@@ -35,7 +35,7 @@ $$recall = \frac{teroris teridentifikasi dengan benar}{teroris teridentifikasi d
 
 $$precision = \frac{true positives}{true positives+false positives}$$
 
-$$precision = \frac{teroris teridentifikasi dengan benar}{teroris teridentifikasi dengan_benar+bukan teroris dinyatakan sebagai teroris}
+$$precision = \frac{teroris teridentifikasi dengan benar}{teroris teridentifikasi dengan_benar+bukan teroris dinyatakan sebagai teroris}$$
 
   Sekarang, kita dapat melihat bahwa model pertama kita yang memberi label kepada semua individu sebagai bukan teroris tidak terlalu berguna. Meski memiliki `accuracy` hampir sempurna, ia memiliki 0 `precision` dan 0 `recall` karena tidak ada yang `true positive`! Misalkan kita memodifikasi model sedikit aja, dan mengidentifikasi satu individu dengan benar sebagai teroris. Sekarang, nilai `precision` akan menjadi 1.0 (bukan `false positive`) tapi `recall` akan menjadi sangat rendah karena kita masih memiliki banyak `false negative`. Misal lebih esktrem lagi jika mengklasifikasikan semua penumpang sebagai teroris, kita akan memiliki `recall` 1.0 (kita akan menangkap setiap teroris) namun `precision` akan sangat rendah dan kita akan menahan banyak individu yang tidak bersalah. Dengan kata lain, saat kita meningkatkan `precision` akan mengurangi `recall` dan sebaliknya
   
