@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Machine Learning : Metrics Recall and Accuracy!"
+title: "Machine Learning : Metrics Recall and Precision!"
 image: https://preview.ibb.co/j1frjn/Untitled_1.jpg
 categories:
   - Machine Learning
