@@ -1,14 +1,13 @@
 ---
 layout: post
 title: "I'm alone but isn't a burden!"
+image: http://preview.ibb.co/b8LXPn/Untitled_1.jpg
 categories:
   - Life Experience
 tags:
   - Life Story
   - Life Experience
 ---
-
-[![foo](https://cdn-images-1.medium.com/max/800/1*QxVoX5OTvQ8Qid-wpug_1A.jpeg)]()
 
 ## Loneliness is a special place.
 Like many boys in my generation, I grew up believing that we are supposed to long for a relationship, which would offer us a shelter and stability, and most importantly, protect us from being alone. Loneliness means that you are not compatible socially, something must be wrong with you, which means that you are a failure, which means that you should avoid it at all costs.
