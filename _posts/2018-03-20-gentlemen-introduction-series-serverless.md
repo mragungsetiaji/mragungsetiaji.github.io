@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Gentlemen Introduction Series : Serverless!"
-image: http://www.anythingcloud.com/wp-content/uploads/2018/03/new.png
+image: https://blog.algorithmia.com/wp-content/uploads/2018/03/Serverless-architecture-backend-web.png
 categories:
   - Data Science
 tags:
