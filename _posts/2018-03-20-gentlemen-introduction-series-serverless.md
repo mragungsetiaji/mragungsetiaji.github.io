@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Gentlemen Introduction Series : Serverless!"
+image: http://www.anythingcloud.com/wp-content/uploads/2018/03/new.png
 categories:
   - Data Science
 tags:
