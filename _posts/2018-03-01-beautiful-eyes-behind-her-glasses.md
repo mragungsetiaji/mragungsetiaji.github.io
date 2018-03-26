@@ -2,6 +2,7 @@
 layout: post
 title: "Beautiful eyes behind her glasses"
 image: http://preview.ibb.co/bQyfun/as.jpg
+comment: true
 categories:
   - Life Experience
 tags:
