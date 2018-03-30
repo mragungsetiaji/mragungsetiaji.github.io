@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gentlemen Introduction Series : Serverless!"
+title: "Gentle Introduction Series : Serverless!"
 image: https://blog.algorithmia.com/wp-content/uploads/2018/03/Serverless-architecture-backend-web.png
 categories:
   - Data Science
