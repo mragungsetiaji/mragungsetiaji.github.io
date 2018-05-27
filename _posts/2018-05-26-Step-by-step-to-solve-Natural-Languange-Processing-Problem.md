@@ -12,7 +12,7 @@ NLP produces new and exciting results on a daily basis, and is a very large fiel
 
 While many NLP papers and tutorials exist online, we have found it hard to find guidelines and tips on how to approach these problems efficiently from the ground up.
 
-# How this article can help
+## How this article can help
 After leading hundreds of projects a year and gaining advice from top teams all over the United States, we wrote this post to explain how to build Machine Learning solutions to solve problems like the ones mentioned above. We’ll begin with the simplest method that could work, and then move on to more nuanced solutions, such as feature engineering, word vectors, and deep learning.
 
 After reading this article, you’ll know how to:
@@ -25,15 +25,16 @@ After reading this article, you’ll know how to:
 
 This post is accompanied by an interactive notebook demonstrating and applying all these techniques. Feel free to run the code and follow along!
 
-# Step 1: Gather your data
-## Example data sources
+### Step 1: Gather your data
+Example data sources
+
 Every Machine Learning problem starts with data, such as a list of emails, posts, or tweets. Common sources of textual information include:
 
 - Product reviews (on Amazon, Yelp, and various App Stores)
 - User-generated content (Tweets, Facebook posts, StackOverflow questions)
 - Troubleshooting (customer requests, support tickets, chat logs)
 
-## “Disasters on Social Media” dataset
+### “Disasters on Social Media” dataset
 
 For this post, we will use a dataset generously provided by CrowdFlower (https://www.crowdflower.com/data-for-everyone/), called “Disasters on Social Media”, where:
 
@@ -43,12 +44,12 @@ Our task will be to detect which tweets are about a disastrous event as opposed 
 
 In the rest of this post, we will refer to tweets that are about disasters as “disaster”, and tweets about anything else as “irrelevant”.
 
-# Labels
+### Labels
 We have labeled data and so we know which tweets belong to which categories. As Richard Socher outlines below, it is usually faster, simpler, and cheaper to find and label enough data to train a model on, rather than trying to optimize a complex unsupervised method.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*CdnxyA_fMXxEcEQ1kUTFRg.png)
 
-# Step 2: Clean your data
+### Step 2: Clean your data
 > The number one rule we follow is: “Your model will only ever be as good as your data.”
 
 One of the key skills of a data scientist is knowing whether the next step should be working on the model or the data. A good rule of thumb is to look at the data first and then clean it up. **A clean dataset will allow a model to learn meaningful features and not overfit on irrelevant noise.**
@@ -64,21 +65,21 @@ Here is a checklist to use to clean your data: (see the code (https://github.com
 
 After following these steps and checking for additional errors, we can start using the clean, labelled data to train models!
 
-# Step 3: Find a good data representation
+### Step 3: Find a good data representation
 Machine Learning models take numerical values as input. Models working on images, for example, take in a matrix representing the intensity of each pixel in each color channel.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*6pW5mPAxYhYBZxkc-hKf0A.png)
 
 Our dataset is a list of sentences, so in order for our algorithm to extract patterns from the data, we first need to find a way to represent it in a way that our algorithm can understand, i.e. as a list of numbers.
 
-# One-hot encoding (Bag of Words)
+### One-hot encoding (Bag of Words)
 A natural way to represent text for computers is to encode each character individually as a number (ASCII for example). If we were to feed this simple representation into a classifier, it would have to learn the structure of words from scratch based only on our data, which is impossible for most datasets. We need to use a higher level approach.
 
 For example, we can build a vocabulary of all the unique words in our dataset, and associate a unique index to each word in the vocabulary. Each sentence is then represented as a list that is as long as the number of distinct words in our vocabulary. At each index in this list, we mark how many times the given word appears in our sentence. This is called a Bag of Words model, since it is a representation that completely ignores the order of words in our sentence. This is illustrated below.
 
 ![](https://cdn-images-1.medium.com/max/1600/1*oQ3suk0Ayc8z8i1QIl5Big.png)
 
-# Visualizing the embeddings
+### Visualizing the embeddings
 We have around 20,000 words in our vocabulary in the “Disasters of Social Media” example, which means that every sentence will be represented as a vector of length 20,000. The vector will contain mostly 0s because each sentence contains only a very small subset of our vocabulary.
 
 In order to see whether our embeddings are capturing information that is relevant to our problem (i.e. whether the tweets are about disasters or not), it is a good idea to visualize them and see if the classes look well separated. Since vocabularies are usually very large and visualizing data in 20,000 dimensions is impossible, techniques like PCA will help project the data down to two dimensions. This is plotted below.
@@ -87,9 +88,11 @@ In order to see whether our embeddings are capturing information that is relevan
 
 The two classes do not look very well separated, which could be a feature of our embeddings or simply of our dimensionality reduction. In order to see whether the Bag of Words features are of any use, we can train a classifier based on them.
 
-# Step 4: Classification
+### Step 4: Classification
 When first approaching a problem, a general best practice is to start with the simplest tool that could solve the job. Whenever it comes to classifying data, a common favorite for its versatility and explainability is Logistic Regression. It is very simple to train and the results are interpretable as you can easily extract the most important coefficients from the model.
 
 We split our data in to a training set used to fit our model and a test set to see how well it generalizes to unseen data. After training, we get an accuracy of 75.4%. Not too shabby! Guessing the most frequent class (“irrelevant”) would give us only 57%. However, even if 75% precision was good enough for our needs, we should never ship a model without trying to understand it.
 
-...CONTINUE 
+### Step 5: Inspection - Confusion Matrix
+
+A first step is to understand the types of errors our model makes, and which kind of errors are least desirable. In our example, false positives are classifying an irrelevant tweet as a disaster, and false negatives are classifying a disaster as an irrelevant tweet. If the priority is to react to every potential event, we would want to lower our false negatives. If we are constrained in resources however, we might prioritize a lower false positive rate to reduce false alarms. A good way to visualize this information is using a Confusion Matrix, which compares the predictions our model makes with the true label. Ideally, the matrix would be a diagonal line from top left to bottom right (our predictions match the truth perfectly).
