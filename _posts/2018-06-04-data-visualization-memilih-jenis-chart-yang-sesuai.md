@@ -48,18 +48,6 @@ Ayo kita coba review lebih dalam tipe chart yang paling sering digunakan, sama c
 
 Table adalah source penting dari semua chart. Digunakan paling baik untuk comparison, composition atau relationship ketika hanya ada sedikit variable atau data point. Jadi jangan membuat chart kalau datanya aja bisa dengan mudah di interpret dari table.
 
-Use tables when:
-
-You need to compare or look up individual values.
-You require precise values.
-Values involve multiple units of measure.
-The data has to communicate quantitative information, but not trends.
-Use charts when the data presentation:
-
-Is used to convey a message that is contained in the shape of the data.
-Is used to show a relationship between many values.
-For example, if you want to show the rate of change, like sudden drop of temperature, it is best to use a chart that shows the slope of a line because rate of change is not easily grasped from a table.
-
 Gunakan table ketika:
 
 - Lu butuh compare atau look up value secara individu
@@ -114,9 +102,7 @@ Jika lu punya nama kategori yang panjang, bagus kalau menggunakan bar charts kar
 
 ## Bar Histograms
 
-Sama seperti column, bar chart juga bisa digunakan untuk present histogram.
-
-Contoh histogram adalah distribusi populasi antara umur dan gender.
+Sama seperti column, bar chart juga bisa digunakan untuk present histogram. Contoh histogram adalah distribusi populasi antara umur dan gender.
 
 ![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/Population_pyramid_for_the_United_Kingdom_using_2011_census_data.png)
 
