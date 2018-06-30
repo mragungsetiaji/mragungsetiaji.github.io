@@ -1,4 +1,4 @@
-# Data Visualization - Memilih jenis chart yang sesuai!
+# Data Visualization - The Right Chart!
 
 Menjadi sekumpulan angka menjadi bermakna adalah sebuah seni, seni dari data visualization. Dengan data tersedia yang penuh dengan `noise`, untuk mengolahnya menjadi sebuah insight, kerjaan kita ga hanya misahin `noise` itu dari data, tapi juga me-represent-kannya dengan cara yang benar.
 
@@ -138,4 +138,19 @@ Contoh bentuk timeline chart seperti:
 - Untuk line chart, axis boleh tidak berawal dari 0 jika pesan yang dimaksudkan pada chart adalah rate dari perubahan atau keseluruhan trend, bukan value secara exact atau comparison. Lebih baik mulai axis dengan 0 untuk audience yang banyak karena beberapa orang mungkin bisa aja menginterpretkan chart jadi ga benar. 
 - Axis waktu harus mulai dari kiri sampai kanan. Jangan skip values untuk data yang intervalnya konsisten present informasi tentang trend, contoh, hari tertentu dengan nilai nol. 
 - Hapus guidelines untuk menekankan trend, rate of change dan untuk ngurangin distraction.
-- Gunakan aspect rasio yang sesuai untuk menunjukan pentingnya sebuah informasi dan hindari effect miring yang banyak dramanya. Contoh presepsi yang bagus untuk kemiringan 45 derajat. (https://eagereyes.org/basics/banking-45-degrees )
+- Gunakan aspect rasio yang sesuai untuk menunjukan pentingnya sebuah informasi dan hindari effect miring yang banyak dramanya. Contoh presepsi yang bagus untuk kemiringan 45 derajat. (https://eagereyes.org/basics/banking-45-degrees)
+
+
+## Area Chart
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_area_charts.png)
+
+Area chart pada dasarnya adalah sebuah line chart, bagus buat trend dan comparison. Area chart akan mengisi area dibawah line, jadi yang paling bagus adalah nge-present akumulasi value yang berubah berdasarkan waktu, seperti stok barang, banyaknya employee atau account (rekening).
+
+Jangan gunakan Area chart untuk present value yang fluktuatif, seperti saham atau perubahan harga.
+
+## Stacked Area
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_stacked_area_charts.png)
+
+Stacked area paling bagus digunakan untuk menunjukkan perubahan composition berdasarkan waktu. Contoh, perubahan market share dari beberapa top player atau revenue share dari beberapa produk berdasarkan waktu.
+
+Stacked area boleh colorful, tapi lu perlu gunain dengan penjelasan, karena hal tersebut bisa jadi sebuah masalah. Jangan gunakan hal tersebut jika lu butuh exact comparison dan jangan stack bersamaan lebih dari tiga atau lima kategori.
