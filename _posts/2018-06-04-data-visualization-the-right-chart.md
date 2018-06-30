@@ -154,3 +154,28 @@ Jangan gunakan Area chart untuk present value yang fluktuatif, seperti saham ata
 Stacked area paling bagus digunakan untuk menunjukkan perubahan composition berdasarkan waktu. Contoh, perubahan market share dari beberapa top player atau revenue share dari beberapa produk berdasarkan waktu.
 
 Stacked area boleh colorful, tapi lu perlu gunain dengan penjelasan, karena hal tersebut bisa jadi sebuah masalah. Jangan gunakan hal tersebut jika lu butuh exact comparison dan jangan stack bersamaan lebih dari tiga atau lima kategori.
+
+## Pie Chart
+
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_pie_chart.png)
+
+Pie chart merupakan chart yang paling sering digunakan dimana-mana dan cukup banyak kesalahan dalam penggunaannya, contoh penggunakan chart dari gambar adalah penggunaan yang kurang tepat, terlalu banyak component, dengan value ga jauh beda.
+
+Pie chart bagusnya nge-present value dalam bentuk percentage, digunakan untuk visualisasi sebagai bagian dari keseluruhan relationship atau composition. Pie chart bukan digunakan untuk comparison, gunakan bar chart untuk hal itu.
+
+Kalau memungkinkan, hindari pie chart. Karena kebanyakan orang berpikir linear, tapi ketika melihat dengan ukuran sudut atau area, kebanyakan dari user ga bisa cepat memahaminya dengan baik.
+
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_pie_chart_angles.png)
+
+Kalo yang gambar diatas akan terlihat lebih baik ketika digunakan untuk comparation dalam menggunakan bar chart.
+
+## Stacked Pie Chart
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_donut_chart.png)
+
+Seperti sangat tidak disarankan menggunakan chart ini, sangat sulit untuk dipahami, gunakan bar chart dengan mode stacked saja.
+
+Ini ada contoh penggunakan pie chart yang efisien.
+
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_pie_to_bar.gif)
+
+
