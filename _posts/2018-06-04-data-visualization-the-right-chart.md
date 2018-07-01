@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Data Visualization - The Right Chart!"
+image: https://preview.ibb.co/jEm4NJ/Charts_and_Graphs_image_1080x675.jpg
 comment: true
 categories:
   - Data Visualization
