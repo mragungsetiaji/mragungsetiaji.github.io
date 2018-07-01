@@ -1,4 +1,15 @@
-# Membuat Dashboard yang baik dan bisa deliver the value!
+---
+layout: post
+title: "Data Visualization - The Right Dashboard that Values Deliverable!"
+image: https://preview.ibb.co/jDCKNJ/hd_wallpapers_for_mac_21.jpg
+comment: true
+categories:
+  - Data Visualization
+tags:
+  - Dashboard
+  - Data Visualization
+  - Business Intelligence
+---
 
 Ketika kita mengendarai sebuah mobil, kita butuh beberapa indikator (kecepatan, informasi bahan bakar, lampu jauh/dekat, dll) untuk memastikan bahwa kita paham dengan situasi saat itu dan tau action apa yang perlu diambil. Sama halnya dengan dashboard kita perlu menempatkan informasi yang sesuai agar si dashboard bisa berfungsi dengan baik. Tau dimana tempatnya? Warna dan Layout seperti apa yang perlu diperhatikan? Berikut adalah beberapa tips yang akan membantu kita untuk menentukan pilihan tersebut. Hal yang paling penting adalah User Experience dan bagaimana report yang disampaikan membuat si end user puas dengan hasil kerja kita.
 
