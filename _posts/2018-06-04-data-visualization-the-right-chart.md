@@ -299,3 +299,16 @@ Gunakan multi-axis jika:
 - Comparation antara multiple variable dengan perbedaan range valuenya.
 - Ilustrasi pada relationships, correlation, dari dua variable atau lebih dalam satu visual.
 
+### Conclusion - Hal yang perlu diperhatikan!
+- `Axis-Time`. Ketika waktu ada dichart, jadikan hal ini sebagai axis-x. Waktu harus dari kiri ke kanan, jangan skip values, bahkan jika tidak ada data pada waktu tersebut.
+- `Data-Ink Ration`. Hapus semua informasi yang tidak menambah value pada chart seperti line, warna atau text.
+- `Sorting`. Untuk column dan bar, agar lebih mudah untuk comparation, sort datanya dengan order ascending atau descending, bukan berdasarkan label. Hal ini juga berlaku pada pie charts.
+- `Legend`. Lu ga butuh legend kalau lu hanya punya satu kategori.
+- `Label`. Gunakan label langsung pada line, column, bar, pie, dll. Ketika memungkinkan, hindari user untuk look-up label dibeda tempat.
+- `Color`. Hindari penggunaan lebih dari enam warna.
+- `Color`. Untuk comparartion pada value yang sama pada waktu yang berbeda, gunakan warna yang sama dengan perbedaan intensitas (dari terang ke gelap).
+- `Color`. Untuk kategori berbeda, gunakan warna berbeda. Warna yang biasa digunakan adalah hitam, putih, merah, hijau, biru, dan kuning.
+- `Color`. Gunakan warna pallete atau style yang sama untuk semua chart pada series-nya, dan axis yang sama dan label untuk chart yang mirip untuk memastikan bahwa chart lu konsisten dan mudah dicompare.
+- `Color`. Pastikan chart yang udah lu bikin print dalam bentuk grayscale, untuk menghindari penggunaan warnya yang salah ketika ada user yang melakukan hal demikian.
+- `Color`. 10 percent orang mengalami kesulitan untuk membedakan warna yang mirip seperti biru dengan biru agak muda satu level saturation, jadi gunakan warna dengan instensity yang cukup jelas dengan bisa dibedakan.
+- `Complexity`. Jangan menambahkan terlalu banyak informasi pada satu chart, jika memungkinkan bagi data menjadi dua chart, gunakan highlighting, warna yang simple, atau ganti tipe chart
