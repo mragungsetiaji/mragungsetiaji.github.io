@@ -1,4 +1,14 @@
-# Data Visualization - The Right Chart!
+---
+layout: post
+title: "Data Visualization - The Right Chart!"
+comment: true
+categories:
+  - Data Visualization
+tags:
+  - Chart
+  - Data Visualization
+  - Business Intelligence
+---
 
 Menjadi sekumpulan angka menjadi bermakna adalah sebuah seni, seni dari data visualization. Dengan data tersedia yang penuh dengan `noise`, untuk mengolahnya menjadi sebuah insight, kerjaan kita ga hanya misahin `noise` itu dari data, tapi juga me-represent-kannya dengan cara yang benar.
 
@@ -10,7 +20,7 @@ Dan ini yang akan terjadi kita me-present-kannya:
 
 ![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/tufte-wallpaper.png)
 
-Dengan beberapa audience didepan lu, CMO sibuk telpon, CTO sibuk mainan laptop, dan CEO malah bobo! Akhirnya lu keluar nyari kucing atu-atu!
+Dengan beberapa audience didepan lu, CMO sibuk telpon, CTO sibuk mainan laptop, dan CEO malah bobo! Akhirnya lu keluar nyari kucing atu-atu buat dicekik!
 
 Untuk mencegah kegagalan dari presentasi kita, mari coba belajar basic dari data visualization. Semoga setelah ini kita bisa menyelamatkan populasi anak-anak kucing yang jadi korban.
 
@@ -178,4 +188,97 @@ Ini ada contoh penggunakan pie chart yang efisien.
 
 ![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_pie_to_bar.gif)
 
+Eh ternyata malah ga jadi Pie yak. lol.
 
+### Hal yang perlu dan tidak perlu dilakukan ketika menggunakan Pie Chart!
+Buat lu ngerasa sentimental buat Pie Chart di PowerPoint, dan ingin tetap menggunakannya, ini ada beberapa tips yang perlu diperhatikan.
+
+- Pastikan untuk total sum dari semua segment berjumlah 100 percent.
+- Gunakan Pie Chart hanya jika lu mempunyai sedikit kategori kurang dari enam, atau ada beberapa segment yang lu pengin user focus kesitu (beberapa segment yang terlihat jelas daripada segment yang lain).
+- Idealnya, kategori hanya ada dua, seperti pria dan wanita. Jadi user focus dengan cepat untuk mencari nilai yang lebih dari 50 percent, atau hanya satu kategori terbesar, seperti market share yang dicompare dengan keseluruhan market (keseluruhan ya bukan tiap item)
+- Jangan gunakan pie chart ketika value dari kategorinya hampir sama.
+- Jangan gunakan effect 3D atau effect2 alay yang lain, hal tersebut menggurasi proporsi yang sebenarnya.
+
+## Scatter Plots
+
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_scatter_plot_chart.png)
+
+Scatter chart secara harfiah digunakan untuk correlation dan distribution. Bagus untuk menunjukkan relationship antara dua variable dimana yang satu berkorelasi dengan yang lain (atau tidak).
+
+Scatter chart juga bisa digunakan untuk data disribution atau clustring trend dan membantu untuk menemukan anomali atau outlier.
+
+Contoh, correlation antara marketing spending vs revenue.
+
+## Bubble Chart
+
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_bubble_chart.png)
+
+
+Bubble Chart adalah pilihan yang bagus jika lu butuh untuk menambahkan dimensi lain pada scatter plot chart. Scatter Plot meng-compare dua value, tapi lu dapat menambahkan ukuran bubble sebagai axis ketiga serta digunakan sebagai comparation. Jika bubble sangat mirip secara ukuran, gunakan label.
+
+Kita bisa menambahkan axis keempat dengan menjadikan setiap buble sebagai pie chart, tapi keknya itu terlalu complex. lol.
+
+Contoh, bubble chart untuk marketing expenditure vs revenue vs profit. Standar scatter plot bisa menunjukkan correlation antara marketing cost dan revenue (secara jelas), ketika si bubble menunjukkan bertambahnya cost untuk marketing hal tersebut memberikan pengaruh yang signifikan terhadap profit.
+
+Gunakan Scatter dan Bubble chart untuk:
+- Menunjukkan relationship antara dua variable (scatter) atau antara tiga variable (bubble).
+- Plot dua atau tiga himpunan variable kedalam satu x-y koordinat.
+- Jadikan horizontal axis kedalam skala logarithmic, hal tersebut akan menunjukkan relationship antara element yang dengan semua distribusinya
+- Gunakan untuk mencari pattern dalam himpunan data yang besar, trend yang linear atau gak linear, correlation, cluster atau outlier.
+- Gunakan data point yang tidak didasarkan variable waktu.
+- Gunakan untuk relationship dan bukan untuk comparison.
+
+## Map Chart
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_map_chart.png)
+
+Map chart bagus untuk memberikan value secara geographical context untuk cepat menemukan spot terbaik dan terburuk dari suatu area secara performance, trend dan outlier. Jika lu mempunyai banyak data tetang lokasi berbentuk koordinat, nama negara, atau alamat, lu dapat plot data tersebut pada map chart.
+
+Maps tidak cukup bagus untuk comparison, karena map biasanya menggunakan color yang ter-scale dan kebanyakan user cukup susah untuk membedakan warna yan ter-scale. Kadang lebih mudah dengan menggunakan bubble jika ingin menyertakan value yang exact untuk menjelaskan comparison.
+
+Contoh, pengunjung website berdasarkan negara, kota atau sales berdasarkan kota.
+
+Tapi jangan gunakan map untuk semua jenis data yang ada variable geographicnya. Sekarang sudah banyak data yang mempunyai variable geographic, tapi bukan berarti harus plot data tersebut dengan map.
+
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/to_much_data_on_map.jpg)
+
+When to use map charts?
+
+If you want to display quantitative information on a map.
+To present spatial relationships and patterns.
+When a regional context for your data is important.
+To get an overview of the distribution across geographic locations.
+Only if your data is standardized (that is, it has the same data format and scale for the whole set).
+
+### Kapan menggunakan Map?
+- Jika lu ingin display informasi kuantitatif pada map.
+- Untuk menunjukkan relationship dan pattern secara spartial.
+- Ketika context untuk region itu penting.
+- Untuk menunjukkan overview pada distribusi secara geographic.
+- Jika dan hanya jika datanya udah standar (sama formatnya dan skalanya)
+
+## Gantt Chart
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_gantt_chart.png)
+
+Sesuai nama orang yang menggunakannya pada tahun 1910an, Henry Gantt.
+
+Gantt bagus untuk planning dan project timeline. Karena sebenarnya dibuat untuk project maps, mengilustrasikan apa yang perlu dikerjakan, urutannya, dan deadlinenya. Lu bisa memvisualisasikan total waktu yang perlu diambil dalam sebuah project, resource yang terlibat, dan dependencynya dengan tugas yang lain.
+
+Tapi project planning bukan satu2nya aplikasi dari Gantt. Gantt juga bisa digunakan untuk bisnis rental, menunjukkan list item untuk dirental (mobil, kamar) dan periode rental dari item tersebut.
+
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_map_chart_example.png)
+
+Variable yang dibutuhkan untuk menggunakan Gantt, setidaknya hal yang dibutuhkan adalah percentase penyelesaian suatu tugas dan dependency dengan tugas yang lain.
+
+## Gauge Chart
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_guage_chart.png)
+
+Gauge keknya nama orang juga tapi gue ga tahu siapa. Gauge cocok untuk digunakan untuk menunjukkan KPI (Key Performance Indicator). Gauge biasanya digunakan untuk single key value, comparing nya dengan color-coded sebagai level indicator, biasanya hijau untuk yang bagus dan merah untuk yang bermasalah.
+
+Dashboard akan jadi tempat yang bagus untuk penggunaan Gauge. Semua KPI akan ada disatu tempat dan cepat dalam penyampaian "Heath Check" dari suatu project atau perusahaan.
+
+Gauge bagus untuk digunakan sebagai:
+- Untuk menunjukkan suatu progress dalam sebuah goal.
+- Untuk menunjukkan pengukuran secara percentile dalam sebuah KPI.
+- Untuk menunjukkan exact value dan meaning dari single measure.
+- Menunjukkan sedikit informasi yang secara cepat bisa dipahami.
+- Kebalikannya, Gauge membutuhkan banyak space dan biasanya hanya menunjukkan single point dari sebuah data. Jika ada banyak Gauge yang dicompare, lebih baik gunakan column dengan indikator tambahan sebagai threshold mungkin akan lebih sederhana dan efektif.
