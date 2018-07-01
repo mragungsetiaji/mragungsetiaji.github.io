@@ -16,8 +16,8 @@ For me, I want people who interact to show me their qualities so that I can figu
 
 As I progressed in my career as well as my life experiences, I realized that I was embracing much more the intuitive side of interactions rather than systems. I charted close to the line between the two and I presume I see the need for systems but I do not want them to rule my thinking. That is how dogma gets incubated. I then took the test again with my increasing sense of intuition and charted as INTJ. I read the write up on the mindset, wiring if you will, and I found a compatibility that was severely missing emotionally with the ISTJ mindset. I also found out that the INTJ profile is extremely rare. Well, no wonder I can’t seem to find people who act and operate the same way as I do! I do also want to say that I chart towards both strategic thinking (as opposed to tactical) and am pretty strong in self-awareness.
 
-# yes self-awareness especially in public situasion that makes me always scan of all possibilities around me!
-## It required additional core of my mind to running these activity, thats also makes me always waste of enegry so I felt hungry faster than anybody!
+## yes self-awareness especially in public situasion that makes me always scan of all possibilities around me!
+## It required additional core of my mind to running these activity, thats also makes me always waste of energy so I felt hungry faster than anybody!
 
 These last two aspects are fairly recent in what I have learned about myself and others. Strategic thinking, while it is considered a valuable asset I find it confusing to people who do not have it. Unfortunately, you can’t really develop it, it is innate. It takes patience and a lot of re-explaining. Self-awareness, or should I say a lack of it, is very odd to me. How can you not implicitly recognize what makes yourself tick??? I have spent a LOT of energy trying to council or attempt to assuage a person who doesn’t even know that they are in a bad, or good, place or why. That is very confounding but at least I now recognize the quirk.
 
