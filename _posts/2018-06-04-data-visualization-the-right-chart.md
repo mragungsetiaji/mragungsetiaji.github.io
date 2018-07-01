@@ -283,3 +283,19 @@ Gauge bagus untuk digunakan sebagai:
 - Untuk menunjukkan exact value dan meaning dari single measure.
 - Menunjukkan sedikit informasi yang secara cepat bisa dipahami.
 - Kebalikannya, Gauge membutuhkan banyak space dan biasanya hanya menunjukkan single point dari sebuah data. Jika ada banyak Gauge yang dicompare, lebih baik gunakan column dengan indikator tambahan sebagai threshold mungkin akan lebih sederhana dan efektif.
+
+## Multi Chart
+
+![](https://eazybi.com/static/img/blog_page/posts/2016_03_01/data_visualization_multi_axes_charts.png)
+
+Ada kalanya ketika simple chart tidak bisa memberikan semua informasi secara menyeluruh. Jika lu ingin menunjukkan relationship dan compare variable dengan skala yang berbeda, pilihan terbaik mungkin mempunyai multiple axis.
+
+Multi-axis boleh digunakan untuk dua atau lebih pada axis-y dan satu untuk axis-x. Tapi sayangnya hal ini sulit untuk dibaca dan dipahami.
+
+Multi-axis bagus untuk menunjukkan trend, correlation dan relationship diantara beberapa data. Tapi multi-axis ga bagus untuk exact comparison (karena perbedaan skala) dan lu perlu menghindarinya untuk menunjukkan exact value sebagai tujuan pertama.
+
+Gunakan multi-axis jika:
+- Display sebuah line atau column dengan axis-x yang sama.
+- Comparation antara multiple variable dengan perbedaan range valuenya.
+- Ilustrasi pada relationships, correlation, dari dua variable atau lebih dalam satu visual.
+
