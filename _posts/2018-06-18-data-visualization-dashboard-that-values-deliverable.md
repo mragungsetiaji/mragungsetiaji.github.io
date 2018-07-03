@@ -119,7 +119,7 @@ KPI yang salah akan berbahaya bagi orang yang berpikir ke arah yang salah atau b
 
 ## 4. Rencanakan Layoutnya
 
-Kenapa hal ini penting? Layout yang buruk akan membuat interest si user hilang, menghabiskan lebih banyak waktu untuk membaca dan memahami dashboard. Layout yang buruk agar gagal untuk `deliver the value`.
+Kenapa hal ini penting? Layout yang buruk akan membuat interest si user hilang, menghabiskan lebih banyak waktu untuk membaca dan memahami dashboard. Layout yang buruk akan gagal untuk `deliver the value`.
 
 Tidak penting layout mana yang akan dipilih, yang penting struktur informasi yang mengarahkan setiap pasang mata ke sesuatu yang paling penting. Posisi informasi yang paling penting harus dilihat pertama kali. Orang-orang dengan abjad dari kiri ke kanan akan scanning halaman dari kiri atas ke kanan, dan focus pada sisi sebelah kiri. Sehingga kanan bawah akan kurang dilihat. Hal ini mungkin tidak berlaku untuk orang arabian atau chinnese yang mempunyai penulisan abjad dari atas ke bawah.
 
@@ -153,7 +153,7 @@ Bar chart bagus untuk perbandingan antara item, sementara line chart untuk trend
 
 - Pakai warna lampu lalu lintas
 
-    Kalau lu pakai mereka sebagai "bad" dan hijau sebagai "good" maka jangan gunakan hal ini untuk selain itu.
+    Kalau lu pakai merah sebagai "bad" dan hijau sebagai "good" maka jangan gunakan hal ini untuk selain itu.
 
 ## 7. Rencanakan untuk maintenance!
 
