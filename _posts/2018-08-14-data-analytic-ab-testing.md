@@ -9,8 +9,10 @@ tags:
   - A/B Testing
 ---
 
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 ## 1. Setup Eksperiment
-Kita akan melakukan A/B Test untuk suatu company yang mencoba meningkatkan jumlah pengguna yang mendaftar untuk akun premium. Tujuan A/B Test adalah untuk mengevaluasi apakah sebuah perubahan tertentu pada website akan menghasilkan peningkatan kinerja dalam metrik tertentu. Kita boleh memutuskan untuk test alternatif yang sangat sederhana seperti mengubah tampilan satu tombol pada halaman web atau menguji layout dan judul yang berbeda. Kita juga bisa menjalankan A/B Test pada proses multi-step yang mungkin memiliki banyak perbedaan. Contoh langkah-langkah yang diperlukan dalam mendaftar pada pengguna baru atau proses melakukan pembelian pada online marketplace. A/B Test adalah subjek yang cukup penting dan ada banyak teknik serta aturan untuk menyiapkan sebuah eksperiment. Kita akan membuatnya lebih sederhana agar kita bisa fokus pada matematikanya.
+Kita akan melakukan A/B Test untuk suatu company yang mencoba meningkatkan jumlah pengguna yang mendaftar untuk akun premium. Tujuan A/B Test adalah untuk mengevaluasi apakah sebuah perubahan tertentu pada website akan menghasilkan peningkatan kinerja dalam metrik tertentu. Kita boleh memutuskan untuk test alternatif yang sangat sederhana seperti mengubah tampilan satu tombol pada halaman web atau menguji layout dan judul yang berbeda. Kita juga bisa menjalankan A/B Test pada proses multi-step yang mungkin memiliki banyak perbedaan. Contoh langkah-langkah yang diperlukan dalam mendaftar pada pengguna baru atau proses melakukan pembelian pada online marketplace. A/B Test adalah subject yang cukup penting dan ada banyak teknik serta aturan untuk menyiapkan sebuah eksperiment. Kita akan membuatnya lebih sederhana agar kita bisa fokus pada matematikanya.
 
 ### Baseline Conversion Rate and Lift
 Sebelum menjalankan test, kita perlu mengetahui **baseline conversion rate** dan **lift** yang diinginkan atau peningkatan sign-up yang ingin kita test. *Baseline conversion rate* adalah rate sekarang dimana kita mendaftarkan pengguna baru dengan desain yang sudah ada. Contoh, kita akan melakukan test untuk mengkonfirmasi bahwa perubahan yang kita lakukan pada proses pendaftaran, akan menghasilkan setidaknya 2% peningkatan pada *sign-up rate*. Saat ini kita cuma punya 10 dari 100 pengguna yang ditawari akun premium.
@@ -169,7 +171,7 @@ Kita bisa melihat bahwa grup test mengkonversi lebih banyak pengguna daripada gr
 ## Distribusi Bernoulli dan Central Limit Theorem
 Coba kita perhatikan distribusi Bernoulli untuk grup control.
 
-$$X ~ Bernoulli(p)$$
+$$X \sim Bernoulli(p)$$
 di mana p adalah probabilitas konversi dari grup control.
 
 Menurut sifat distribusi Bernoulli, mean dan varians adalah sebagai berikut:
@@ -180,7 +182,11 @@ $$Var(X)=p(1-p)$$
 
 Menurut teorema limit pusat, dengan menghitung banyak sampel berarti kita dapat mendekati mean sebenarnya dari populasi, 𝜇, dari data mana untuk grup kontrol diambil. Distribusi sampel, p, akan terdistribusi secara normal di sekitar mean yang sebenarnya dengan standar deviasi sama dengan standar error dari mean. Persamaan untuk ini diberikan sebagai:
 
+$$\sigma_{\bar x} = \frac{s}{\sqrt{n}} = \frac{\sqrt{p(1-p)}}{\sqrt{p}}$$
+
 Maka, kita bisa menganggap kedua grup sebagai distribusi normal dengan properti berikut:
+
+$$\hat p \sim Normal \Bigg(\mu=p, \sigma = \frac{\sqrt{p(1-p)}}{\sqrt{p}}\Bigg)$$
 
 Hal yang sama juga dilakukan untuk kelompok test. Jadi, kita bisa memiliki dua distribusi normal untuk `p_A` dan `p_B`.
 
@@ -204,24 +210,37 @@ plt.ylabel('PDF')
 
 Garis putus-putus menunjukkan tingkat konversi rata-rata conversion rate untuk setiap grup. Jarak antara garis putus-putus merah dan garis putus-putus biru sama dengan perbedaan rata-rata antara grup kontrol dan grup test. d_hat adalah distribusi perbedaan antara variabel acak dari dua kelompok tersebut.
 
+$$\hat d = \hat p_B - \hat p_A$$
+
 ### **Variance Total**
 
 Ingat bahwa hipotesis nol menyatakan bahwa perbedaan dalam probabilitas antara kedua kelompok adalah nol. Oleh karena itu, mean untuk distribusi normal ini akan menjadi nol. Properti lain yang kita perlukan untuk distribusi normal adalah standar deviasi atau variasinya. (Catatan: variansnya adalah standar deviasi kuadrat.) Varians dari perbedaannya akan tergantung pada varians dari probabilitas untuk kedua kelompok.
 
-
-
 Properti dasar dari varians yaitu varians dari jumlah dua variabel independen acak adalah jumlah dari varians.
+
+$$Var(X + Y) = Var(X) + Var(Y)$$
+
+$$Var(X - Y) = Var(X) + Var(Y)$$
 
 Ini artinya bahwa hipotesis nol dan hipotesis alternatif akan memiliki varian yang sama yang akan menjadi jumlah dari varians untuk grup kontrol dan grup test.
 
+$$Var(\hat d) =  Var(\hat p_B - \hat p_A) = Var(\hat p_A) + Var(\hat p_B) = \frac{p_A(1-p_A)}{n_A}+\frac{p_B(1-p_B)}{n_B}$$
+
 Simpangan baku nya dapat dihitung dengan:
 
-Jika kita menempatkan persamaan ini dalam standar deviasi untuk distribusi Bernoulli, s:
+$$\sigma = \sqrt{Var(\hat d)} = \sqrt{\frac{p_A(1-p_A)}{n_A}+\frac{p_B(1-p_B)}{n_B}}$$
 
-dan kita mendapatkan pendekatan Satterthwaite untuk standar error gabungan. Jika kita menghitung probabilitas gabungan dan menggunakannya untuk menghitung standar deviasi untuk kedua kelompok, kita mendapatkan:
+Jika kita menempatkan persamaan ini dalam standar deviasi untuk distribusi Bernoulli, $s$:
 
+$$\sigma = \sqrt{Var(\hat d)} = \sqrt{\frac{s^2_A}{n_A}+\frac{s^2_B}{n_B}}$$
+
+dan kita mendapatkan **pendekatan Satterthwaite** untuk standar error gabungan. Jika kita menghitung probabilitas gabungan dan menggunakannya untuk menghitung standar deviasi untuk kedua kelompok, kita mendapatkan:
+
+$$\sigma = \sqrt{Var(\hat d)} = \sqrt{\frac{s^2_A}{n_A}+\frac{s^2_B}{n_B}} = \sqrt{s_p \bigg(\frac{1}{n_A}+\frac{1}{n_B}\bigg)} = \sqrt{\hat p_p(1-\hat p_p)\bigg(\frac{1}{n_A}+\frac{1}{n_B}\bigg)}$$
 
 dimana:
+
+$$\hat p_p = \frac{p_A N_A + p_b N_B}{N_A+N_B}$$
 
 Ini adalah persamaan yang sama yang digunakan di Udacity. Kedua persamaan itu untuk standar error gabungan yang akan memberikan hasil yang sangat mirip.
 
@@ -236,7 +255,15 @@ Mari mulai dengan mendefinisikan hipotesis nol dan hipotesis alternatif.
 
 Kalau di Udacity, hipotesis nol akan menjadi distribusi normal dengan rata-rata nol dan standar deviasi sama dengan standar error yang dikumpulkan.
 
+$$H_0 : d = 0$$
+
+$$\hat d_0 \sim Normal(0, SE_{pool})$$
+
 Hipotesis alternatif memiliki standar deviasi yang sama dengan hipotesis nol, tetapi mean akan terletak pada perbedaan di conversion rate-nya, d_hat. Masuk akal sih, karena kita bisa hitung selisih conversion rate-nya dari data, tapi distribusi normal mewakili kemungkinan nilai yang dapat dari hasil eksperimen ini.
+
+$$H_A:d=p_B - p_A$$
+
+$$\hat d_A \sim Normal(d, SE_{pool})$$
 
 Sekarang kita paham derivasi dari standar error yang terkumpul, kita bisa langsung memplot hipotesis nol dan alternatif untuk eksperimen kedepannya. Berikut adalah script untuk membuat hipotesis nol dan alternatif sama abplot.
 
