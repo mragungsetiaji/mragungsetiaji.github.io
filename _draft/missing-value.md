@@ -17,3 +17,13 @@ Listwise deletion: menghapus semua data untuk observasi yang memiliki satu atau 
 Pairwise
 Pairwise deletion: menganalisa semua kasus di mana variabel of interest ada disitu dengan demikian memaksimalkan semua data yang tersedia berdasarkan analisis. Kelebihan teknik ini, meningkatkan kekuatan dalam analisis tetapi memiliki banyak kerugian. Ini mengasumsikan bahwa data yang missing adalah MCAR. Jika kita menghapus secara pairwise maka kita akan menghasilkan sejumlah pengamatan berbeda yang berkontribusi pada berbagai bagian pada model nantinya, yang dapat membuat interpretasi menjadi susah.
 
+Drop Variabel
+Menurut gue, selalu lebih baik menyimpan data daripada membuangnya. Kadang-kadang kita boleh drop variabel, tetapi hanya jika variabel itu tidak signifikan. Karena itu, imputasi selalu menjadi pilihan yang lebih disukai daripada drop variabel.
+
+Metode Time-Series
+- Last Observation Carried Forward (LOCF) & Next Observation Carried Backward (NOCB)
+Ini adalah pendekatan statistik umum untuk analisis data longitudinal yang berulang di mana beberapa pengamatan tindak lanjut mungkin hilang. Data longitudinal melacak sampel yang sama pada titik waktu yang berbeda. Kedua metode ini dapat memperkenalkan bias dalam analisis dan berkinerja buruk ketika data memiliki tren yang terlihat.
+- Interpolasi Linear
+Metode ini bagus untuk time series dengan beberapa tren tetapi tidak cocok untuk data musiman (seasonal)
+- Seasonal + Linear Interpolation
+Metode ini berfungsi baik untuk data dengan tren dan musim
