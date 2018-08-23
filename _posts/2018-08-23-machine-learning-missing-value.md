@@ -1,3 +1,17 @@
+---
+layout: post
+title: "Machine Learning - Missing Value!"
+comment: true
+categories:
+  - Data Science
+tags:
+  - Machine learning
+  - Massing Value
+  - Imputation
+---
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
 Salah satu masalah paling umum yang gue sering hadapi dalam Data Cleaning / Exploratory Analysis adalah mising value. Pertama, pahami bahwa TIDAK ada cara yang cukup bagus untuk menangani missing value. Gue udah menemukan solusi yang berbeda untuk imputasi data tergantung pada jenis masalahnya: Time series, ML, Regresi, dll. Dan sulit untuk diselesaikan secara general. Dalam blog ini, gue coba meringkas metode yang paling umum digunakan dan mencoba mencari solusi yang struktural. 
 
 ## Imputasi atau Delete Data
