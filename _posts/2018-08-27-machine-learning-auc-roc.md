@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Machine Learning - AUC-ROC!"
+title: "Machine Learning - AUC-ROC! (Version 1.1)"
 comment: true
 categories:
   - Machine Learning
@@ -10,6 +10,12 @@ tags:
   - AUC
   - Metric
 ---
+
+> Updated v1.1 : Contoh sederhana penerapan ROC-AUC (30 Agustus 2018)
+
+Katakan kita ingin membuat model untuk test suatu penyakit tertentu. Ada beberapa data tentang pasien dengan penyakitnya, tujuan si model untuk memprediksi status penyakit dari beberapa rangkaian variabel tentang si pasien. True Positive Rate adalah subjek memiliki penyakit yang diidentifikasi secara tepat sebagai orang yang memiliki penyakit, dan False Positive Rate adalah subjek yang tidak memiliki penyakit, tetapi diidentifikasi sebagai orang yang memiliki penyakit (berdasarkan model).
+
+Ada beberapa threshold untuk menunjukan bahwa seorang pasien memiliki penyakit. Katakanlah lebih dari atau sama dengan 0.5, kita menganggap bahwa nilai tersebut cukup untuk menunjukkan sipasien sebagai memiliki penyakit atau tidak. Saat kita memvariasikan treshold ini, TPR dan FPR akan berubah. Ini adalah kurva ROC.
 
 Dalam Machine Learning, pengukuran bagus tidaknya suatu model merupakan hal yang penting. Dan jika diklasifikasi, kita bisa mengandalkan Kurva AUC-ROC. Ketika kita perlu memvisualisasikan kinerja siatu model pada multi-class klasifikasi, kita menggunakan kurva AUC (**Area Under The Curve**) dan ROC (**Receiver Operating Characteristics**). Salah satu metrik evaluasi terpenting untuk memeriksa kinerja model klasifikasi apa pun itu. Atau dikenal juga AUCROC (**Area Under the Receiver Operating Characteristics**
 
