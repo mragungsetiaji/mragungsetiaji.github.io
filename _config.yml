@@ -1,5 +1,4 @@
-# Site
-title: "mragungsetiaji"
+title: mragungsetiaji
 bio: "A Necronomicon Book."
 description: "test"
 reading_time:       true
@@ -32,7 +31,7 @@ disqus_shortname:   mragungsetiaji
 # if you don't have any of social below, comment the line.
 #google:
   #plus:            #username
-  analytics:
+  #analytics:
   #verify:
   #ad-client:
   #ad-slot:
