@@ -1,7 +1,7 @@
 # Site
-title:              "mragungsetiaji"
-bio:                "A Necronomicon Book."
-description:        "test"
+title: "mragungsetiaji"
+bio: "A Necronomicon Book."
+description: "test"
 reading_time:       true
 words_per_minute:   200
 logo:               'assets/img/logo.png'
