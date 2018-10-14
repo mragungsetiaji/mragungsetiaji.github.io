@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Science of Hyposrisy"
+title:  "The Science of Hypocrisy"
 date:   2018-10-14
 excerpt: "Why we seem to despise hypocrites more than outright liars"
 tag:
