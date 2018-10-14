@@ -14,6 +14,9 @@ Kita, sebagian besar dari percakapan sehari-hari isinya berkisar tentang gosip (
 
 Hypocrite (Kemunafikan) biasanya melibatkan kritik atau mengutuk tindakan amoral orang lain saat terlibat dalam tindakan-tindakan tertentu. Hal ini bisa membuat kita terlihat lebih buruk daripada jika kita terlibat dalam tindakan tidak bermoral itu tetapi tidak mengkritik mereka sama sekali, yang mungkin terdengar aneh. Tetapi apakah kita ingin seseorang terlibat dalam perilaku tidak bermoral dan mengkritiknya atau terlibat dalam perilaku tidak bermoral dan tidak mengkritiknya? Di dalam psikologi, hypocrite dapat membuat perasaan kita tentang hal itu menjadi lebih masuk akal (hal yang wajar).
 
+<a href="https://ibb.co/cJtYuU"><img src="https://preview.ibb.co/f8ej19/rishabh-butola-1059947-unsplash.jpg" alt="rishabh-butola-1059947-unsplash" border="0"></a>
+Photo by Rishabh Butola on Unsplash
+
 ## Testing Experience
 
 Ada eksperimen pada tahun 2001 yang bertujuan mengubah orang menjadi orang munafik, [link](https://pdfs.semanticscholar.org/7c3c/96669d99d752e7c26ce45aaadf3bfde74051.pdf). Satu kelompok peserta harus menetapkan satu set tugas untuk diri mereka sendiri dan peserta sisanya tidak. Ada satu jenis tugas yang menarik dan menawarkan imbalan sementara yang lain netral tanpa imbalan. Yaitu, Koin yang ditempatkan di sebelah peserta memiliki instruksi tertulis yang menjelaskan bahwa kebanyakan orang percaya membalik koin akan menjadi cara yang adil untuk mendistribusikan tugas. Memang, hampir semua peserta sepakat bahwa membalik koin untuk memberikan tugas adalah hal yang paling bermoral dan cukup adil.
