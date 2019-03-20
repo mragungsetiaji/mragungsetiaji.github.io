@@ -1,9 +1,9 @@
 title: Stack Problems
 description: My Personal Stack Problems
-author: Agus Makmun
+author: Agung Setiaji
 github: https://github.com/agusmakmun
-about: I'm Programmer for Python & Django. I've made quite a few web apps, especially on Django.
-disqus_shortname: stackproblems
+about: Data Science and Analytics 
+disqus_shortname: mragungsetiaji
 google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
 
@@ -17,15 +17,15 @@ collections:
 
 social:
     - icon: fa-facebook
-      link: "#"
+      link: "https://facebook.com/mragungsetiaji"
     - icon: fa-twitter
-      link: "#"
+      link: "https://twitter.com/mragungsetiaji"
     - icon: fa-linkedin
-      link: "#"
+      link: "https://linkedin.com/in/mragungsetiaji"
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/mragungsetiaji"
 
 share:
   twitter_username: github.io
