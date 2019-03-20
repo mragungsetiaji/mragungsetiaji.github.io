@@ -5,8 +5,6 @@ date: 2018-08-14 18:34:10 +0700
 categories: [python, machine learning]
 ---
 
-<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
 ## 1. Setup Eksperiment
 Kita akan melakukan A/B Test untuk suatu company yang mencoba meningkatkan jumlah pengguna yang mendaftar untuk akun premium. Tujuan A/B Test adalah untuk mengevaluasi apakah sebuah perubahan tertentu pada website akan menghasilkan peningkatan kinerja dalam metrik tertentu. Kita boleh memutuskan untuk test alternatif yang sangat sederhana seperti mengubah tampilan satu tombol pada halaman web atau menguji layout dan judul yang berbeda. Kita juga bisa menjalankan A/B Test pada proses multi-step yang mungkin memiliki banyak perbedaan. Contoh langkah-langkah yang diperlukan dalam mendaftar pada pengguna baru atau proses melakukan pembelian pada online marketplace. A/B Test adalah subject yang cukup penting dan ada banyak teknik serta aturan untuk menyiapkan sebuah eksperiment. Kita akan membuatnya lebih sederhana agar kita bisa fokus pada matematikanya.
 
