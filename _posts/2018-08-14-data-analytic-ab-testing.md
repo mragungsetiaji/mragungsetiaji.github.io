@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Data Analytics : A\B Testing"
+title:  "Data Analytics : AB Testing"
 date: 2018-08-14 18:34:10 +0700
 categories: [python, machine learning]
 ---
