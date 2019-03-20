@@ -13,7 +13,7 @@ For example result of it:
 tutorial above, when you can not directly add the attribute inside html tag.
 but if you can add it, you can following this tutorial bellow:
 
-{% highlight html %}
+```html
 <input id="id_price" type="number" min=0 onkeypress="return isNumber(event)"/>
 <script type="text/javascript">
 function isNumber(evt) {
@@ -25,7 +25,7 @@ function isNumber(evt) {
     return true;
 }
 </script>
-{% endhighlight %}
+```
 
 **Refference:** [http://stackoverflow.com/a/7295864](http://stackoverflow.com/a/7295864)
 
