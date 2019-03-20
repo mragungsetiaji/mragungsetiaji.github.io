@@ -1,12 +1,9 @@
-## My Stack Problems
+## Github Pages
 
 > This project forked and has been modified from [A simple grey theme for Jekyll](https://github.com/liamsymonds/simplygrey-jekyll),
 > and the search posts using [Super Search](https://github.com/chinchang/super-search)
 
-### Demo
-* [https://agusmakmun.github.io](https://agusmakmun.github.io)
-
-#### Features
+## Features
 
 * Sitemap and XML Feed
 * Pagination in homepage
@@ -21,18 +18,14 @@
 * Google analytics
 * HTML Minify _(Compress HTML)_ using [Jekyll Compress HTML](https://github.com/penibelst/jekyll-compress-html)
 
-#### Screenshot
-
-![Screenshot Post Page](https://raw.githubusercontent.com/agusmakmun/agusmakmun.github.io/master/static/img/screenshot-post-page.png  "Screenshot Post Page")
-
-### Install & Configuration
+## Install & Configuration
 
 1. Fork this repository
 2. Edit site settings inside file of `_config.yml`
 3. Edit your projects at file of `projects.md`, `_data/projects.json` and inside path of `_project/` _(for detail project)_.
 4. Edit about yourself inside file of `about.md`
 
-### How to Use?
+## How to Use?
 
 **a. Add new Category**
 
@@ -66,7 +59,3 @@ image: Broadcast_Mail.png             # (custom) image only for meta `property="
 
 # your content post with markdown syntax goes here...
 ```
-
-### Contributing
-
-Feel free to [open a bug](https://github.com/agusmakmun/agusmakmun.github.io/issues) or [contribute to code](https://github.com/agusmakmun/agusmakmun.github.io/pulls)!
