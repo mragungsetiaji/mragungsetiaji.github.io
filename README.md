@@ -57,5 +57,5 @@ tags: [foo, bar]                      # (custom) tags only for meta `property="a
 image: Broadcast_Mail.png             # (custom) image only for meta `property="og:image"`, save your image inside path of `static/img/_posts`
 ---
 
-# your content post with markdown syntax goes here...
+# your content post with markdown syntax goes here..
 ```
